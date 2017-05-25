@@ -1,0 +1,209 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+    <h4 class="mainTitle no-margin" translate="sidebar.nav.forms.ELEMENTS">FORM ELEMENTS</h4>
+    <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: BASIC EXAMPLE -->
+<div class="container-fluid container-fullw">
+    <div class="row">
+        <div class="col-md-12"> 
+            <div class="panel panel-white">
+                <div class="panel-body">
+                <div ng-controller="GridFormSpecimenCtrl">
+                    <form class="gf">
+                        <fieldset>
+                         <legend>Specimen Data Entry</legend>
+                           <div class="gf-row-12 ">
+<div class="gf-col-7 gf-col-bg">
+    <fieldset>
+        <legend>SEARCH SPECIMENS IN COLLECTION</legend>
+        <div class="gf-row-5 gf-large">
+            <div class="gf-col-1">
+                <label>Code</label>
+                <INPUT class=' validate[required,custom[date],past[#txtcollection_end_date]] yyyy_mm_dd' name="txtcollection_start_date" id="txtcollection_start_date" type="text" value="" autofocus>
+            </div>
+            <div class="gf-col-1">
+                <label>Year</label>
+                <INPUT class=' validate[required,custom[date],past[#txtcollection_end_date]] yyyy_mm_dd' name="txtcollection_start_date" id="txtcollection_start_date" type="text" value="" autofocus>
+            </div>
+            <div class="gf-col-1">
+                <label>Number</label>
+                <INPUT class='validate[required,custom[date],future[#txtcollection_start_date]] yyyy_mm_dd' onfocus="autofill();" name="txtcollection_end_date" id="txtcollection_end_date" type="text" value="" autofocus>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+       
+        <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-search"></i> SEARCH</a>
+    </fieldset>
+    <fieldset>
+                        <legend>Specimen List</legend>
+                      <div class="row">
+    <div class="col-md-12">
+        <label>&nbsp;</label>
+       
+      <table id="Coll_Specimenlist" class="table compact table-striped table-bordered" cellspacing="0" width="900px">
+        <thead>
+          <tr>
+            
+            
+           
+            <th>Spec_NO.</th>
+                                                <th>Order</th>
+                                                <th>Family</th>
+                                                <th>Genus</th>
+                                                <th>Species</th>
+                                               <th>Species</th>
+                                                
+                                                
+            
+                                              
+            
+                                              
+                                              
+          </tr>
+        </thead>
+
+        <tfoot>
+          <tr>
+            
+            
+           
+            <th>Spec_NO.</th>
+                                                <th>Order</th>
+                                                <th>Family</th>
+                                                <th>Genus</th>
+                                                <th>Species</th>
+                                               <th>Species</th>
+                                               
+                                                
+                                               
+            
+                                                
+                                               
+          </tr>
+        </tfoot>
+      </table>
+
+      
+    
+      
+</div>
+                    </fieldset>   
+</div>
+<div class="gf-col-5 gf-col-bg">
+    <fieldset>
+        <legend>Specimen Number</legend>
+        <div class="gf-row-8 gf-large">
+            <div class="gf-col-2">
+                <label>code</label>
+                <INPUT class='numberdecimal' type="text" id="txtcoll_code" name="txtcoll_code" value="" autofocus>
+            </div>
+            <div class="gf-col-2">
+                <label>year</label>
+                <INPUT class='numberdecimal' type="text" id="txtcoll_year" name="txtcoll_year" value="" autofocus>
+            </div>
+            <div class="gf-col-2">
+                <label>number</label>
+                <INPUT class='numberdecimal' type="text" id="txtcoll_number" name="txtcoll_number" value="" autofocus>
+            </div>
+            <div class="gf-col-2">
+                <label>Specimen ID</label>
+                <div class="input-group">
+                    <INPUT class='numberdecimal' type="text" id="txtspecimen_number" name="txtspecimen_number" value="" autofocus>
+                    <span class="input-group-btn">
+                                                       
+                                                    </span>
+                </div>
+            </div>
+        </div>
+        <INPUT name="txtidspecimens" id="txtidspecimens" type="hidden" value="{{data.txtidspecimens}}" autofocus>
+    </fieldset>
+    <fieldset>
+    <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-refresh"></i> GENERATE AUTO NUMBER!</a>
+    <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-search"></i> SEARCH</a>
+        
+    </fieldset>
+    <fieldset>
+        <legend>Specimen Details</legend>
+        <div class="gf-row-2 gf-large">
+            <div class="gf-col-2">
+                <label>Order</label>
+                <SELECT name="txtOrder" id="txtOrder" autofocus>
+                </SELECT>
+            </div>
+        </div>
+        <div class="gf-row-4 gf-large">
+            <div class="gf-col-2">
+                <label>family</label>
+                <SELECT id="txtFamily" name="txtFamily" value="" autofocus>
+                </SELECT>
+            </div>
+            <div class="gf-col-2">
+                <label>Sub family</label>
+                <INPUT type="text" id="txtSub_family" name="txtSub_family" value="" autofocus>
+            </div>
+        </div>
+        <div class="gf-row-2 gf-large">
+            <div class="gf-col-1">
+                <label>Genus</label>
+                <SELECT id="txtGenus" name="txtGenus" value="" autofocus>
+                </SELECT>
+            </div>
+            <div class="gf-col-1">
+                <label>Sub Genus</label>
+                <INPUT type="text" id="txtSub_Genus" name="txtSub_Genus" value="" autofocus>
+            </div>
+        </div>
+        <div class="gf-row-2 gf-large">
+            <div class="gf-col-2">
+                <label>Species</label>
+                <SELECT id="txtSpecies" name="txtSpecies" value="" autofocus>
+                </SELECT>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Type Specimen</legend>
+        <div class="gf-col-5">
+            <label>type</label>
+            <label class="radio-inline">
+                <input id="Normal" name="test" value="0" type="radio">Normal</label> &nbsp;
+            <label class="radio-inline">
+                <input id="Holotype" name="test" value="1" type="radio">Holotype</label> &nbsp;
+            <label class="radio-inline">
+                <input id="Paratype" name="test" value="2" type="radio">Paratype</label> &nbsp;
+            <label class="radio-inline">
+                <input id="Neotype" name="test" value="3" type="radio">Neotype</label>&nbsp;
+            <label class="radio-inline">
+                <input id="Syntype" name="test" value="4" type="radio">Syntype</label> &nbsp;
+            <label class="radio-inline">
+                <input id="Lectotype" name="test" value="5" type="radio">Lectotype</label> &nbsp;
+            <label class="radio-inline">
+                <input id="Paralectotype" name="test" value="6" type="radio">Paralectotype</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-refresh"></i> EDIT</a>
+    <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-search"></i> DIFFERENT</a>
+    <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-refresh"></i> SIMILAR</a>
+
+    </fieldset>
+</div>
+
+                           </div>
+
+
+
+
+
+
+                         </fieldset>
+                       
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
