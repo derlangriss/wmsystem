@@ -51,10 +51,10 @@ $columns = array(
 
 // SQL server connection information
 $sql_details = array(
-	'user' => '',
-	'pass' => '',
-	'db'   => '',
-	'host' => ''
+	'user' => 'mkmorgangling',
+	'pass' => 'nepenthes',
+	'db'   => 'datatable',
+	'host' => 'localhost'
 );
 
 

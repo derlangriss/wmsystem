@@ -36,18 +36,18 @@ $primaryKey = 'idcollection';
 // parameter represents the DataTables column identifier. In this case simple
 // indexes
 $columns = array(
-	array( 'as'=>'as1','tb'=>'collection','db' => 'idcollection', 'dt' => 0 ),
+	array( 'as'=>'as1','tb'=>'specimens','db' => 'idspecimens', 'dt' => 0 ),
 	array( 'as'=>'as2','tb'=>'collection','db' => 'collectionid',  'dt' => 1 ),
-	array( 'as'=>'as3','tb'=>'specimens','db' => 'idspecimens',      'dt' => 2 ),
+	array( 'as'=>'as3','tb'=>'collection','db' => 'idcollection',      'dt' => 2 ),
 	array( 'as'=>'as4','tb'=>'collection','db' => 'trash',     'dt' => 3 ),
-        array( 'as'=>'as5','tb'=>'collection','db' => 'coll_code',  'dt' => 4 ),
+    array( 'as'=>'as5','tb'=>'collection','db' => 'coll_code',  'dt' => 4 ),
 	array( 'as'=>'as6','tb'=>'collection','db' => 'coll_year',      'dt' => 5 ),
 	array( 'as'=>'as7','tb'=>'collection','db' => 'coll_number',     'dt' => 6 ),
-        array( 'as'=>'as8','tb'=>'torder','db' => 'tordername',     'dt' => 7 ),
-        array( 'as'=>'as9','tb'=>'family','db' => 'familyname',  'dt' => 8 ),
+    array( 'as'=>'as8','tb'=>'torder','db' => 'tordername',     'dt' => 7 ),
+    array( 'as'=>'as9','tb'=>'family','db' => 'familyname',  'dt' => 8 ),
 	array( 'as'=>'as10','tb'=>'genus','db' => 'genusname',      'dt' => 9 ),
 	array( 'as'=>'as11','tb'=>'species','db' => 'speciesname',     'dt' => 10 ),
-        array( 'as'=>'as12','tb'=>'specimens','db' => 'specimen_number',      'dt' => 11 ),
+    array( 'as'=>'as12','tb'=>'specimens','db' => 'specimen_number',      'dt' => 11 ),
 	
 	
 	

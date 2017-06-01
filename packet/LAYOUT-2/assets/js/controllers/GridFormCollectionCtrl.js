@@ -15,7 +15,7 @@ app.controller('MapCoordinatesCtrl', ["$scope", "$compile", function ($scope, $c
     } 
 
     function degreesToRadians(deg) { 
-        return deg * (Math.PI / 180);
+        return deg * (Math.PI / 180); 
     }
 
     function radiansToDegrees(rad) {

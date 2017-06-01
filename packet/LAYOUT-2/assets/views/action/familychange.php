@@ -5,9 +5,14 @@ if( ! ini_get('date.timezone') )
 }
 require('_header.php');
 require('collnolib.php');
-if ( isset($_GET['sCode']) )
+if ( empty($_GET['sCode']) )
     {
-	$strSQL = "select * from torder
+
+	echo json_encode($_GET['sCode']);
+	
+	
+	}else{
+$strSQL = "select * from torder
                     left join family on torder.idtorder = family.torder_idtorder
                     WHERE TRUE AND family.idfamily  = '".$_GET["sCode"]."'  ";
 	
@@ -31,40 +36,9 @@ if ( isset($_GET['sCode']) )
 	pg_close($conn);
 	
 	echo json_encode($resultArray);	
-	
-	
-	
-	
-	}else{
-$resultArray = array();
-$sql= "select * from collectioncounter LIMIT 1";
-$res = pg_query($sql);
-
-$row=pg_fetch_array($res);
-extract($row);
-
-$curyear = date('Y'); 
-
-if($year==$curyear)
-  {
-    $collyear = $curyear;
-    $newcount = $count+1;
-    $count = $newcount;
-    
-  }else{
-    $collyear = $curyear;
-    $count = 1;
-   
-  }
-
-$count_number = sprintf('%04d',$count);
-$collno = ("QSBG-".$collyear . "-" . $count_number);
 
 
-$arr = array('coll_code' => 'QSBG', 'coll_year' => $collyear, 'coll_number' => $count_number);
-array_push($resultArray,$arr);
 
-echo json_encode($resultArray);	
     }
 
 

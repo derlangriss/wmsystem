@@ -19,7 +19,7 @@
     <a id="edit" class="btn btn-primary btn-outline btn-sm btn-dark-purple">Edit</a>
     </p>
                      <div ng-controller="datatablesCtrl">
-    <table id="example01" class="table compact table-striped table-condensed nowrap" cellspacing="0" width="100%">
+    <table id="example01" class="table compact table-striped table-condensed nowrap" cellspacing="0" width="100%" >
                 <thead>
                     <tr>
                         

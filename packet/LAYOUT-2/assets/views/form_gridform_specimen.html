@@ -2,12 +2,12 @@
 <div class="breadcrumb-wrapper">
     <h4 class="mainTitle no-margin" translate="sidebar.nav.forms.ELEMENTS">FORM ELEMENTS</h4>
     <div ncy-breadcrumb class="pull-right"></div>
-</div>
+</div> 
 <!-- end: BREADCRUMB -->
 <!-- start: BASIC EXAMPLE -->
 <div class="container-fluid container-fullw">
     <div class="row">
-        <div class="col-md-12"> 
+        <div class="col-md-12">  
             <div class="panel panel-white">
                 <div class="panel-body">
                 <div ng-controller="GridFormSpecimenCtrl">
@@ -19,20 +19,27 @@
     <fieldset>
         <legend>SEARCH SPECIMENS IN COLLECTION</legend>
         <div class="gf-row-5 gf-large">
-            <div class="gf-col-1">
+            <div class="gf-col-1" data-column="4">
                 <label>Code</label>
-                <INPUT class=' validate[required,custom[date],past[#txtcollection_end_date]] yyyy_mm_dd' name="txtcollection_start_date" id="txtcollection_start_date" type="text" value="" autofocus>
+                <input type="text" class="column_filterspec" id="col4_filter"  autofocus>
+              
             </div>
-            <div class="gf-col-1">
+
+            <div class="gf-col-1" data-column="5">
                 <label>Year</label>
-                <INPUT class=' validate[required,custom[date],past[#txtcollection_end_date]] yyyy_mm_dd' name="txtcollection_start_date" id="txtcollection_start_date" type="text" value="" autofocus>
+                <input type="text" class="column_filterspec" id="col5_filter"  autofocus>
+               
             </div>
-            <div class="gf-col-1">
+       
+
+            <div class="gf-col-1" data-column="6">
                 <label>Number</label>
-                <INPUT class='validate[required,custom[date],future[#txtcollection_start_date]] yyyy_mm_dd' onfocus="autofill();" name="txtcollection_end_date" id="txtcollection_end_date" type="text" value="" autofocus>
+                <INPUT type="text" class="column_filterspec"  id="col6_filter" autofocus>
+              
             </div>
         </div>
     </fieldset>
+    
     <fieldset>
        
         <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-search"></i> SEARCH</a>
@@ -43,18 +50,26 @@
     <div class="col-md-12">
         <label>&nbsp;</label>
        
-      <table id="Coll_Specimenlist" class="table compact table-striped table-bordered" cellspacing="0" width="900px">
+   
+      <table id="Coll_Specimenlist" class="table compact table-striped table-condensed nowrap" cellspacing="0" width="100%" >
         <thead>
           <tr>
             
             
            
-            <th>Spec_NO.</th>
+            <th>NO.</th>
+                                                <th>Collection Number</th>
+                                                <th>idcollection</th>
+                                                <th>trash</th>
+                                                <th>coll_code</th>
+                                                <th>coll_year</th>
+                                                  <th>coll_number</th>
                                                 <th>Order</th>
                                                 <th>Family</th>
                                                 <th>Genus</th>
                                                 <th>Species</th>
-                                               <th>Species</th>
+                                                <th>specimen_number</th>
+                                                
                                                 
                                                 
             
@@ -70,12 +85,19 @@
             
             
            
-            <th>Spec_NO.</th>
+              <th>NO.</th>
+                                                <th>Collection Number</th>
+                                                <th>idcollection</th>
+                                                <th>trash</th>
+                                                <th>coll_code</th>
+                                                <th>coll_year</th>
+                                                  <th>coll_number</th>
                                                 <th>Order</th>
                                                 <th>Family</th>
                                                 <th>Genus</th>
                                                 <th>Species</th>
-                                               <th>Species</th>
+                                                <th>specimen_number</th>
+                                                
                                                
                                                 
                                                
@@ -130,26 +152,38 @@
         <div class="gf-row-2 gf-large">
             <div class="gf-col-2">
                 <label>Order</label>
-                <SELECT name="txtOrder" id="txtOrder" autofocus>
-                </SELECT>
+                <select ng-model="idtorder" ng-change="onChanged(idtorder,'order')" ng-options="getOrder.idtorder as getOrder.tordername for getOrder in getOrder track by getOrder.idtorder" name="ff" id="txtOrder">
+                    <option value="">Select Family</option>
+                </select>
             </div>
         </div>
         <div class="gf-row-4 gf-large">
             <div class="gf-col-2">
                 <label>family</label>
-                <SELECT id="txtFamily" name="txtFamily" value="" autofocus>
-                </SELECT>
+                <select ng-model="idfamily" ng-change="onChanged(idfamily,'family')" ng-options="getFamily.idfamily as getFamily.familyname for getFamily in getFamily track by getFamily.idfamily" name="ff" id="txtFamily">
+                    <option value="">Select Family</option>
+                </select>
             </div>
             <div class="gf-col-2">
                 <label>Sub family</label>
                 <INPUT type="text" id="txtSub_family" name="txtSub_family" value="" autofocus>
             </div>
         </div>
+
         <div class="gf-row-2 gf-large">
             <div class="gf-col-1">
                 <label>Genus</label>
-                <SELECT id="txtGenus" name="txtGenus" value="" autofocus>
-                </SELECT>
+                
+<select ng-model="specdata.idgenus" 
+        ng-options="specdata.idgenus as specdata.genusname for specdata in getGenus track by specdata.idgenus" name="ff" id="txtGenus" >
+
+    <option value='{{specdata.idgenus}}'></option>
+    <option value="">Select Genus</option>
+</select>
+
+
+
+
             </div>
             <div class="gf-col-1">
                 <label>Sub Genus</label>
@@ -159,8 +193,19 @@
         <div class="gf-row-2 gf-large">
             <div class="gf-col-2">
                 <label>Species</label>
-                <SELECT id="txtSpecies" name="txtSpecies" value="" autofocus>
-                </SELECT>
+                
+
+<select ng-model="specdata.idspecies" 
+        ng-options="specdata.idspecies as specdata.speciesname for specdata in getSpecies track by specdata.idspecies" name="ff" id="txtSpecies" >
+
+    <option value='{{specdata.idspecies}}'></option>
+    <option value="">Select Species</option>
+</select>
+
+
+
+
+
             </div>
         </div>
     </fieldset>
@@ -200,6 +245,12 @@
 
 
                          </fieldset>
+                       
+                       
+                        
+
+
+                        
                        
                     </form>
                     </div>

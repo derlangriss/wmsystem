@@ -22778,4 +22778,11 @@ fieldset[disabled] .sp-container .sp-palette-button-container button.sp-palette-
     -webkit-border-radius: 100px
 }
 
-*/
+*/ 
+
+.text-wrap{
+    white-space:normal;
+}
+.width-200{
+    width:200px;
+}
