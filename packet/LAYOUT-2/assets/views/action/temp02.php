@@ -11,64 +11,59 @@
 
 
 
-   if(empty($_GET['sOrderid'])&&$_GET['emptytaxa']=="emptyorder"){
+  if (!empty($_GET['sOrderid']))
+    {
 
-              $query="SELECT * FROM family ORDER BY familyname ASC ";   
-          
-   
-        } else if($_GET['emptytaxa']=="emptyorder") {
-                $query="SELECT * FROM torder
+        if($_GET['sOrderid']!=""){
+         $query="SELECT * FROM torder
                 LEFT JOIN family ON torder.idtorder = family.torder_idtorder
                 WHERE TRUE 
                 AND torder.idtorder  = '".$_GET["sOrderid"]."'";
-        }
-
         
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $num=$stmt->rowCount();}
        
-       
-    
-   if(empty($_GET['sFamilyid'])&&$_GET['emptytaxa']=="emptyfamily"){
-
-              $query="SELECT * FROM genus ORDER BY genusname ASC ";         
-   
-        } else if($_GET['emptytaxa']=="emptyfamily") {
-                $query="SELECT * FROM torder
+    }
+  
+     if (!empty($_GET['sFamilyid']))
+    {
+         $query="SELECT * FROM torder
                 LEFT JOIN family ON torder.idtorder = family.torder_idtorder
                 LEFT JOIN genus  ON family.idfamily = genus.family_idfamily
                 WHERE TRUE 
                 AND family.idfamily  = '".$_GET["sFamilyid"]."'";
-        }
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $num=$stmt->rowCount();
+    }
 
-     if(empty($_GET['sGenusid'])&&$_GET['emptytaxa']=="emptygenus"){
-
-              $query="SELECT * FROM species ORDER BY speciesname ASC ";         
-   
-        } else if($_GET['emptytaxa']=="emptygenus") {
-                $query="SELECT * FROM torder
+     if (!empty($_GET['sGenusid']))
+    {
+         $query="SELECT * FROM torder
                 LEFT JOIN family ON torder.idtorder = family.torder_idtorder
                 LEFT JOIN genus  ON family.idfamily = genus.family_idfamily
                 LEFT JOIN species ON genus.idgenus = species.genus_idgenus
                 WHERE TRUE 
                 AND genus.idgenus  = '".$_GET["sGenusid"]."'";
-        }
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $num=$stmt->rowCount();
+    }
 
-        if(empty($_GET['sSpeciesid'])&&$_GET['emptytaxa']=="emptyspecies"){
-
-              $query="SELECT * FROM species ORDER BY speciesname ASC ";         
-   
-        } else if($_GET['emptytaxa']=="emptyspecies") {
-                $query="SELECT * FROM torder
+     if (!empty($_GET['sSpeciesid']))
+    {
+         $query="SELECT * FROM torder
                 LEFT JOIN family ON torder.idtorder = family.torder_idtorder
                 LEFT JOIN genus  ON family.idfamily = genus.family_idfamily
                 LEFT JOIN species ON genus.idgenus = species.genus_idgenus
                 WHERE TRUE 
                 AND species.idspecies  = '".$_GET["sSpeciesid"]."'";
-        }
-
-   $stmt = $conn->prepare($query);
+        $stmt = $conn->prepare($query);
         $stmt->execute();
         $num=$stmt->rowCount();
- 
+    }
+
     
         $json=new postgresql2jsonPDO;
         $data=$json->getJSON($stmt,$num);

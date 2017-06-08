@@ -2,7 +2,7 @@
 <div class="breadcrumb-wrapper">
     <h4 class="mainTitle no-margin" translate="sidebar.nav.forms.ELEMENTS">FORM ELEMENTS</h4>
     <div ncy-breadcrumb class="pull-right"></div>
-</div> 
+</div>  
 <!-- end: BREADCRUMB -->
 <!-- start: BASIC EXAMPLE -->
 <div class="container-fluid container-fullw">
@@ -147,20 +147,28 @@
     <a class="btn btn-light-azure btn-xs" href="#"><i class="fa fa-search"></i> SEARCH</a>
         
     </fieldset>
+    <!--fieldset>
+           <select name = "mySelect" id = "mySelect" ng-options="data.DisplayText for data in ScopeObject.ArrayData track by data.DisplayID" ng-model="ScopeObject.SelectedData"
+        </select>
+    </fieldset-->
+   
     <fieldset>
         <legend>Specimen Details</legend>
         <div class="gf-row-2 gf-large">
             <div class="gf-col-2">
                 <label>Order</label>
-                <select ng-model="idtorder" ng-change="onChanged(idtorder,'order')" ng-options="getOrder.idtorder as getOrder.tordername for getOrder in getOrder track by getOrder.idtorder" name="ff" id="txtOrder">
-                    <option value="">Select Family</option>
+                <select ng-model="idtorder" ng-change="onChangedOrder(idtorder)"  ng-options="getOrder.idtorder as getOrder.tordername for getOrder in getOrder track by getOrder.idtorder" name="ff" id="txtOrder">
+                 <option value="">Select Order</option>                    
                 </select>
+               
+                
             </div>
+          
         </div>
         <div class="gf-row-4 gf-large">
             <div class="gf-col-2">
                 <label>family</label>
-                <select ng-model="idfamily" ng-change="onChanged(idfamily,'family')" ng-options="getFamily.idfamily as getFamily.familyname for getFamily in getFamily track by getFamily.idfamily" name="ff" id="txtFamily">
+                <select ng-model="idfamily" ng-change="onChangedFamily(idfamily)" ng-options="getFamily.idfamily as getFamily.familyname for getFamily in getFamily track by getFamily.idfamily" name="ff" id="txtFamily">
                     <option value="">Select Family</option>
                 </select>
             </div>
@@ -174,10 +182,10 @@
             <div class="gf-col-1">
                 <label>Genus</label>
                 
-<select ng-model="specdata.idgenus" 
-        ng-options="specdata.idgenus as specdata.genusname for specdata in getGenus track by specdata.idgenus" name="ff" id="txtGenus" >
+<select ng-model="idgenus" ng-change="onChangedGenus(idgenus)"
+        ng-options="getGenus.idgenus as getGenus.genusname for getGenus in getGenus track by getGenus.idgenus" name="ff" id="txtGenus" >
 
-    <option value='{{specdata.idgenus}}'></option>
+  
     <option value="">Select Genus</option>
 </select>
 
@@ -195,11 +203,12 @@
                 <label>Species</label>
                 
 
-<select ng-model="specdata.idspecies" 
-        ng-options="specdata.idspecies as specdata.speciesname for specdata in getSpecies track by specdata.idspecies" name="ff" id="txtSpecies" >
-
-    <option value='{{specdata.idspecies}}'></option>
-    <option value="">Select Species</option>
+<select ng-model="idspecies" ng-change="onChangedSpecies(idspecies)"
+        ng-options="getSpecies.idspecies as getSpecies.speciesname for getSpecies in getSpecies track by getSpecies.idspecies" name="ff" id="txtSpecies" >
+ <option value="">Select Species
+ </option>
+  
+   
 </select>
 
 

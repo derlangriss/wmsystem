@@ -6,7 +6,7 @@
         $userName = "mkmorgangling";
         $userPassword = "nepenthes";
         $dbName = "qsbgcoll";
-  
+   
         $conn = new PDO('pgsql:host=localhost;port=5432;dbname=qsbgcoll', 'mkmorgangling', 'nepenthes');
 
        if ( isset($_GET['sTorder'])){

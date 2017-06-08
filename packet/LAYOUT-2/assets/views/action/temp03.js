@@ -16,7 +16,7 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
                  $('#col' + i + '_filter').val()
 
              ).draw();
-         }
+         } 
 
        
 
@@ -207,6 +207,7 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
     
     $scope.getOrderlist = null;
     $scope.getOrder = [];
+     $scope.idtordertest ={"selected":null};
     $http({
         method: 'GET',
         url: 'assets/views/action/getTaxalist.php',
@@ -214,6 +215,11 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         params: {sTorder: 'torder'}
     }).success(function(result) {
         $scope.getOrder = result;
+        $scope.idtorder = {
+ 
+    "idtorder": "0"
+  
+    };
     });
 
     $scope.getFamilylist = null;
@@ -404,13 +410,10 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
     $http({
         method: 'GET',
         url: 'assets/views/action/getTaxalistspec.php',
+         
           params: {sOrderid: id,emptytaxa: "emptyorder"}
     }).success(function(result) {
         $scope.getFamily = result;
-        if (result[0]== undefine)
-        alert(result[0].idtorder);
-       
-     
     });
 
   }
@@ -422,10 +425,11 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
     $http({
         method: 'GET',
         url: 'assets/views/action/getTaxalistspec.php',
+      
         params: {sFamilyid: id,emptytaxa : "emptyfamily"}
     }).success(function(result) {
        $scope.getGenus = result;
-       $scope.idtorder = result[0];
+    
       
     });
 
@@ -455,12 +459,12 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
     $http({
         method: 'GET',
         url: 'assets/views/action/getTaxalistspec.php',
-        params: {sSpeciesid: id,emptytaxa : "emptyspecies"}
+        params: {sSpeciesid: id,emptytaxa : "emptygenus"}
     }).success(function(result) {
     
        $scope.idtorder = result[0];
        $scope.idfamily = result[0];
-       $scope.idgenus = result[0];
+        $scope.idgenus = result[0];
        
     });
 
@@ -500,7 +504,66 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
 
   }
   */
+
+  $scope.ScopeObject = {
+    ArrayData: [
+    {DisplayID:'1' ,DisplayText: 'America'},
+    {DisplayID:'2' ,DisplayText: 'Indea'},
+    {DisplayID:'3' ,DisplayText: 'London'}
+    ],
+    SelectedData: {DisplayID: '2', DisplayText: 'India'}
+
+  }
+
+
+     
+        $scope.countries = { 
+          test:[
+        {
+          id: "1",
+          name: "India"
+        }, {
+          id: "2",
+          name: "USA"
+        }, {
+          id: "3",
+          name: "UK"
+        }, {
+          id: "4",
+          name: "Nepal"
+        }
+        ]
+     
+       }
+
+
+ $scope.item = {
+ 
+    "versionID": "0"
+  
+};
     
+    $scope.versions = [{
+    "id": "0",
+    "description": "CURRENT",
+    "name": "CURRENT"
+},
+    {
+    "id": "114",
+    "description": "description of Version 2",
+    "name": "version2"
+},
+    {
+    "id": "126",
+    "description": "description of Version 3",
+    "name": "version3"
+},
+    {
+    "id": "149",
+    "description": "description of Version 4",
+    "name": "version4"
+}] ;
+
 
   
     
