@@ -406,9 +406,77 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         url: 'assets/views/action/getTaxalistspec.php',
           params: {sOrderid: id,emptytaxa: "emptyorder"}
     }).success(function(result) {
+       
+       if(typeof result[0].idtorder !== "undefined"){
         $scope.getFamily = result;
-        if (result[0]== undefine)
-        alert(result[0].idtorder);
+       }
+       else
+       {
+
+         $scope.getOrderlist = null;
+    $scope.getOrder = [];
+    $http({
+        method: 'GET',
+        url: 'assets/views/action/getTaxalist.php',
+        dataType: "JSON",
+        params: {sTorder: 'torder'}
+    }).success(function(result) {
+        $scope.getOrder = result;
+    });
+
+    $scope.getFamilylist = null;
+    $scope.getFamily = [];
+    $http({
+        method: 'GET',
+        url: 'assets/views/action/getTaxalist.php',
+        dataType: "JSON",
+        params: {sFamily: 'family'}
+    }).success(function(result) {
+        $scope.getFamily = result;
+    });
+
+    $scope.getGenuslist = null;
+    $scope.getGenus = [];
+    $http({
+        method: 'GET',
+        url: 'assets/views/action/getTaxalist.php',
+        dataType: "JSON",
+        params: {sGenus: 'genus'}
+    }).success(function(result) {
+        $scope.getGenus = result;
+    });
+
+    $scope.getSpecieslist = null;
+    $scope.getSpecies = [];
+    $http({
+        method: 'GET',
+        url: 'assets/views/action/getTaxalist.php',
+        dataType: "JSON",
+        params: {sSpecies: 'Species'}
+    }).success(function(result) {
+        $scope.getSpecies = result;
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       }
        
      
     });
@@ -424,8 +492,23 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         url: 'assets/views/action/getTaxalistspec.php',
         params: {sFamilyid: id,emptytaxa : "emptyfamily"}
     }).success(function(result) {
-       $scope.getGenus = result;
-       $scope.idtorder = result[0];
+      
+
+
+       if(typeof result[0].idfamily !== "undefined"){
+         $scope.getGenus = result;
+         $scope.idtorder = result[0];
+       }
+       else
+       {
+       
+         $scope.idgenus = {
+          idgenus : undefined
+        }
+         $scope.idspecies = {
+          idspecies : undefined
+        }
+       }
       
     });
 
@@ -441,9 +524,25 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         url: 'assets/views/action/getTaxalistspec.php',
         params: {sGenusid: id,emptytaxa : "emptygenus"}
     }).success(function(result) {
-       $scope.getSpecies = result;
-       $scope.idtorder = result[0];
-       $scope.idfamily = result[0];
+
+        if(typeof result[0].idgenus !== "undefined"){
+          $scope.getSpecies = result;
+          $scope.idtorder = result[0];
+          $scope.idfamily = result[0];
+
+       $scope.getFamily = result;
+       $scope.getOrder = result;
+       }
+       else
+       {
+       
+        
+         $scope.idspecies = {
+          idspecies : undefined
+        }
+       }
+
+     
        
     });
 
@@ -457,10 +556,22 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         url: 'assets/views/action/getTaxalistspec.php',
         params: {sSpeciesid: id,emptytaxa : "emptyspecies"}
     }).success(function(result) {
-    
+
+       if(typeof result[0].idgenus !== "undefined"){
        $scope.idtorder = result[0];
        $scope.idfamily = result[0];
        $scope.idgenus = result[0];
+       $scope.idspecies = result[0];
+
+       $scope.getOrder = result;
+       $scope.getGenus = result;
+       $scope.getFamily = result;
+       $scope.getSpecies = result;
+       }
+      
+
+    
+      
        
     });
 

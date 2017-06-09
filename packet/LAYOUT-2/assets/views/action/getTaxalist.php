@@ -1,7 +1,7 @@
 <?php
 	require("postgresql2jsonPDO.class.php");
 	ini_set('display_errors', 1);
-	error_reporting(~0);
+	error_reporting(~0); 
         $serverName = "localhost";
         $userName = "mkmorgangling";
         $userPassword = "nepenthes";
