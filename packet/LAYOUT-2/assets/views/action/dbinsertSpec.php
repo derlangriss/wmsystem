@@ -3,13 +3,14 @@ if( ! ini_get('date.timezone') )
 {
     date_default_timezone_set('GMT');
 }
-$strMode = $_POST["tMode"];
+
+$strMode = $_GET["tMode"];
 
 
 require('_header.php');
 require('collnolib.php');
 
-
+ 
 
 if($strMode == "ADD")
 {
@@ -19,7 +20,7 @@ if($strMode == "ADD")
 	$strSQL = "INSERT INTO specimens ";
 	$strSQL .="(collection_idcollection,specimen_number,torder_idtorder,family_idfamily,genus_idgenus,species_idspecies,taxatypes_idtaxatypes)";
 	$strSQL .="VALUES ";
-	$strSQL .="('".$_POST["tidcollection"]."','".$_POST["tspecimen_number"]."','".$_POST["tOrder_ID"]."','".$_POST["tFamily_ID"]."','".$_POST["tGenus_ID"]."','".$_POST["tSpecies_ID"]."','".$_POST["taxatype"]."')";
+	$strSQL .="('".$_GET["tidcollection"]."','".$_GET["tspecimen_number"]."','".$_GET["tOrder_ID"]."','".$_GET["tFamily_ID"]."','".$_GET["tGenus_ID"]."','".$_GET["tSpecies_ID"]."','".$_GET["taxatype"]."')";
 	
 	$objQuery=pg_query($strSQL);
 

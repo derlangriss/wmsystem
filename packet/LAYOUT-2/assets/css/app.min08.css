@@ -3,7 +3,7 @@ Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
-*/
+*/ 
  
 .animated {
     -webkit-animation-duration: 1s;
@@ -22786,3 +22786,32 @@ fieldset[disabled] .sp-container .sp-palette-button-container button.sp-palette-
 .width-200{
     width:200px;
 }
+
+.user_profile_list_a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+.user_profile_list_a li {
+    padding: 8px;
+    overflow: hidden;
+}
+.user_profile_list_a li img {
+    float: left;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.user_profile_list_a li p {
+    padding-top: 2px;
+    margin: 0;
+    font: 400 14px / 18px "Open Sans",Arial,sans-serif;
+    overflow: hidden;
+}
+.user_profile_list_a li p>span {
+    display: block;
+    font-size: 11px;
+}
+.user_profile_list_a li+li { border-top: 1px dashed #eee }

@@ -3,39 +3,15 @@
     <h4 class="mainTitle no-margin" translate="sidebar.nav.forms.ELEMENTS">FORM ELEMENTS</h4>
     <div ncy-breadcrumb class="pull-right"></div>
 </div>
-<!-- end: BREADCRUMB -->
+<!-- end: BREADCRUMB --> 
 <div class="container-fluid container-fullw">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-white">
-                <div class="panel-body">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-white">
+            <div class="panel-body">
+                <div ng-controller="PrintLabelCtrl">
+                    
 
-    <div class="row">
-    <div class="col-sm-6">
-        <img class="user_profile_img" ng-src="assets/img/avatars/avatar13_tn.png" alt="" height="76" width="76">
-        <h1 class="user_profile_name"> Sompong Thongkhaow</h1>
-        <p class="user_profile_info">Web Developer</p>
-        <p class="user_profile_info"></p>
-    </div>
-    <div class="col-sm-6 text-right-sm">
-        <div class="easy_chart_box">
-            <div class="easy_chart_user_tasks easy_chart" data-percent="66">
-                <span class="easy_chart_icon icon_download"></span>
-            </div>
-        </div>
-        <div class="easy_chart_box">
-            <div class="easy_chart_user_mails easy_chart" data-percent="55">
-                <span class="easy_chart_percent_text"></span>
-            </div>
-        </div>
-        <div class="easy_chart_box">
-            <div class="easy_chart_user_sale easy_chart" data-percent="88">
-                <span class="easy_chart_percent"></span>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
 <div class="row">
     <div class="col-md-9">
         <form name="frmMain"  id="formID" class="gf">
@@ -45,7 +21,9 @@
 
         <div class="gf-row-6 ">
                 <div class="gf-col-6 gf-col-bg">
-                   <fieldset>
+                   <fieldset>          
+
+                  
                         <legend>Search Collection</legend>
                               <div class="gf-row-3 gf-large">
                                     <div id="filter_col1" data-column="7" class="gf-col-1">
@@ -162,10 +140,10 @@
             <span class="heading_text">print queue</span>
         </h3>
         
-        <div id="content-1" class="content">
+        <div id="content-1" class="content" ng-init="loadData();">
            <ul class="user_profile_list_a">
                  
-                <li class=""  >
+                <li class=""></li>
                 <!--
                     <a href="javascript:void(0)">
                         <img ng-src="assets/img/avatars/avatar09_tn.png" alt="" height="38" width="38">
@@ -177,7 +155,7 @@
             </ul>
         </div> 
         
-        <a ui-sref="auth.QSBG_collection.print_summary" class="btn btn-primary btn-outline btn-sm">Check Out</a>
+        <a ui-sref="app.form.gridform_printsummary" class="btn btn-primary btn-outline btn-sm">Check Out</a>
     </div>
     
    
@@ -204,7 +182,7 @@
 
 
 
-
+</div>
             </div>
         </div>
     </div>

@@ -1,28 +1,21 @@
-'use strict';
+'use strict'; 
 /** 
   * controllers for GoogleMap 
   * AngularJS Directive 
-*/
+*/ 
 app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$stateParams", "SweetAlert", "test", 
     function ($scope, $http, $timeout, $stateParams, SweetAlert, test) {
-
-
     $scope.specdata = {};
     test.specno($stateParams.specid).success(function(result) {
-       
         
          function filterColumn(i) {
              $('#Coll_Specimenlist').DataTable().column(i).search(
                  $('#col' + i + '_filter').val()
 
              ).draw();
-         }
-
-       
-
-        $("#col4_filter").val(result[0].coll_code);
-        $("#col5_filter").val(result[0].coll_year);
-        $("#col6_filter").val(result[0].coll_number);
+         } 
+        
+        $("#coll_codetest").val(result[0].coll_code);
         var startdate = result[0].collectionstartdate;
         var enddate = result[0].collectionenddate;
         $scope.specdata.idcollection = result[0].idcollection;
@@ -42,6 +35,7 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         $scope.specdata.coll_code = result[0].coll_code;
         $scope.specdata.coll_year = result[0].coll_year;
         $scope.specdata.coll_number = result[0].coll_number;
+        $scope.specdata.idspecimens = result[0].idspecimens;  
         $('#labelhead').html("THAILAND:");
         $('#collectioncode').html(result[0].coll_code);
         $('#collectionyear').html(result[0].coll_year);
@@ -54,10 +48,114 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         $('#collectionlocality').html(result[0].collectionlocality);
         $('#collectionlat').html(result[0].collectionlatd + "&#12444;" + result[0].collectionlatm + "&#39;" + result[0].collectionlats + "&quot" + "N");
         $('#collectionlong').html(result[0].collectionlongd + "&#12444;" + result[0].collectionlongm + "&#39;" + result[0].collectionlongs + "&quot" + "E");
-       filterColumnspec(4)
+        $("#col4_filter").val(result[0].coll_code);
+        $("#col5_filter").val(result[0].coll_year);
+        $("#col6_filter").val(result[0].coll_number);
+        filterColumnspec(4)
         filterColumnspec(5)
         filterColumnspec(6)
     });
+
+    $scope.generateAUTO = function() {
+           
+          $.ajax({ 
+        url: "assets/views/action/returnSpecNobutton.php" ,
+        type: "POST"
+      })
+      .success(function(result) {
+                                
+        var obj = jQuery.parseJSON(result);
+                                if(obj == '')
+          {
+                                            alter
+            $('input[type=text]').val('');
+          }
+          else
+          {
+                             $.each(obj, function(key, inval) {
+                                                        
+                                                          $("#txtspecimen_number").val(inval["specimen_number"])
+                                                          $('#txtidcollection').val(inval["idcollection"]); 
+                                                           
+                                                           
+                                                          $('#txtcoll_code').val(inval["coll_code"]);
+                                                          $('#txtcoll_year').val(inval["coll_year"]);
+                                                          $('#txtcoll_number').val(inval["coll_number"]);
+                                                          
+                                                          $('#txtSub_family').val(inval["subfamily"]);
+                                                          $('#labelhead').html("THAILAND:");
+                                                          $('#collectioncode').html(inval["coll_code"]);
+                                                          $('#collectionyear').html(inval["coll_year"]);
+                                                          $('#collectionnumber').html(inval["coll_number"]);
+                                                          $('#collectionprovince').html(inval["provinceen"]);
+                                                          $('#collectionenddate').html(inval["collectionenddate"]);
+                                                          $('#collectionmethod').html(inval["collectionmethodsdetails"]);
+                                                          $('#collectioncollector').html(inval["collectorsen"]);
+                                                          $('#collectionmasl').html(inval["collectionmasl"]);
+                                                          $('#collectionlocality').html(inval["collectionlocality"]);
+                                                          $('#collectionnumber').html(inval["coll_number"]);
+                                                          $('#collectionmasl').html("Alt. "+inval["collectionmasl"]+" m");
+                                                          $('#collectionlat').html(inval["collectionlatd"]+"&#12444;"+inval["collectionlatm"]+"&#39;"+inval["collectionlats"]+"&quot"+"N");
+                                                          $('#collectionlong').html(inval["collectionlongd"]+"&#12444;"+inval["collectionlongm"]+"&#39;"+inval["collectionlongs"]+"&quot"+"E");
+                                                          
+                             });
+                                        }
+                                     
+
+      })
+         
+    };
+
+
+     $scope.specSEARCH = function() {
+           
+          $.ajax({ 
+        url: "assets/views/action/SpecimenSearch.php" ,
+        type: "GET",
+        data: {sCode: $("#txtcoll_code").val() ,sYear: $("#txtcoll_year").val()  ,sNumber: $("#txtcoll_number").val() ,sSpecnum: $("#txtspecimen_number").val() }
+      })
+      .success(function(result) {
+                                
+        var obj = jQuery.parseJSON(result);
+                                if(obj == '')
+          {
+                                          alert("FILE NOT FOUND!!")
+          }
+          else
+          {
+                             $.each(obj, function(key, inval) {
+                                                        
+                                                          $("#txtspecimen_number").val(inval["specimen_number"])
+                                                          $('#txtidcollection').val(inval["idcollection"]); 
+                                                           
+                                                           
+                                                          $('#txtcoll_code').val(inval["coll_code"]);
+                                                          $('#txtcoll_year').val(inval["coll_year"]);
+                                                          $('#txtcoll_number').val(inval["coll_number"]);
+                                                          
+                                                          $('#txtSub_family').val(inval["subfamily"]);
+                                                          $('#labelhead').html("THAILAND:");
+                                                          $('#collectioncode').html(inval["coll_code"]);
+                                                          $('#collectionyear').html(inval["coll_year"]);
+                                                          $('#collectionnumber').html(inval["coll_number"]);
+                                                          $('#collectionprovince').html(inval["provinceen"]);
+                                                          $('#collectionenddate').html(inval["collectionenddate"]);
+                                                          $('#collectionmethod').html(inval["collectionmethodsdetails"]);
+                                                          $('#collectioncollector').html(inval["collectorsen"]);
+                                                          $('#collectionmasl').html(inval["collectionmasl"]);
+                                                          $('#collectionlocality').html(inval["collectionlocality"]);
+                                                          $('#collectionnumber').html(inval["coll_number"]);
+                                                          $('#collectionmasl').html("Alt. "+inval["collectionmasl"]+" m");
+                                                          $('#collectionlat').html(inval["collectionlatd"]+"&#12444;"+inval["collectionlatm"]+"&#39;"+inval["collectionlats"]+"&quot"+"N");
+                                                          $('#collectionlong').html(inval["collectionlongd"]+"&#12444;"+inval["collectionlongm"]+"&#39;"+inval["collectionlongs"]+"&quot"+"E");
+                                                          
+                             });
+                                        }
+                                     
+
+      })
+         
+    };
 
     var selected = [];
     var table = $('#Coll_Specimenlist').DataTable({
@@ -110,11 +208,6 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
         {
             "visible": false,
                     targets: 6
-
-        },
-        {
-            "visible": false,
-                    targets: 11
 
         }
 
@@ -456,31 +549,8 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
     }).success(function(result) {
         $scope.getSpecies = result;
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
        }
-       
-     
     });
-
   }
 
   $scope.onChangedFamily = function(id) {
@@ -576,6 +646,135 @@ app.controller("GridFormSpecimenCtrl", ["$scope","$http", "$timeout", "$statePar
     });
 
   }
+
+    $scope.onChangedCollcode = function() {
+       $http({
+           method: 'GET',
+           url: 'assets/views/action/returnSpecno.php',
+           params: {
+               sCode: $("#txtcoll_code").val()
+           }
+       }).success(function(response) {
+           if (typeof response[0] != 'undefined') {
+               $scope.coll_year = response[0].coll_year;
+               $scope.coll_number = response[0].coll_number;
+               $scope.specimen_number = response[0].specimen_number;
+
+               $("#txtcoll_year").val($scope.coll_year);
+               $("#txtcoll_number").val($scope.coll_number);
+               $("#txtspecimen_number").val($scope.specimen_number);
+           }
+       });
+   }
+   
+   $scope.onChangedCollyear = function() {
+       $http({
+           method: 'GET',
+           url: 'assets/views/action/returnSpecno.php',
+           params: {
+               sYear: $("#txtcoll_year").val()
+           }
+       }).success(function(response) {
+           if (typeof response[0] != 'undefined') {
+               $scope.coll_number = response[0].coll_number;
+                $scope.specimen_number = response[0].specimen_number;
+               $("#txtcoll_number").val($scope.coll_number);
+                $("#txtspecimen_number").val($scope.specimen_number);
+           }
+       });
+   }
+   
+   $scope.onChangedCollnumber = function() {
+       $http({
+           method: 'GET',
+           url: 'assets/views/action/returnSpecno.php',
+           params: {
+               sYear: $("#txtcoll_year").val() ,
+               sNumber: $("#txtcoll_number").val()
+           }
+       }).success(function(response) {
+           if (typeof response[0] != 'undefined') {
+               $scope.specimen_number = response[0].specimen_number;
+               $("#txtspecimen_number").val($scope.specimen_number)
+           }
+       });
+   }
+
+
+ $scope.Insectspec = function(Mode) {
+  var a = $("#txtOrder").val();
+  var b = $("#txtFamily").val();
+  var c = $("#txtGenus").val();
+  var d = $("#txtSpecies").val();
+  var e = $("#txtidspecimens").val();
+  var f = $("#txtidcollection").val();
+  var g = parseInt($("#txtspecimen_number").val()); 
+  var h = $('input[name=typespecimen]:checked').val();
+
+
+  
+  if(a==''){
+     a = 0;
+  }
+  if(b==''){
+     b = 0;
+  }
+  if(c==''){
+     c = 0;
+  }
+  if(d==''){
+     d = 0;
+  }
+
+ var pmeters = { tidspecimens: encodeURI(e),
+                 tidcollection: encodeURI(f),
+                 tspecimen_number: encodeURI(g),
+                 tOrder_ID: encodeURI(a),
+                 tFamily_ID: encodeURI(b),
+                 tGenus_ID: encodeURI(c),
+                 tSpecies_ID: encodeURI(d),
+                 taxatype: h,
+                 tMode: Mode
+                }
+
+         $http({
+           method: 'GET',
+           url: 'assets/views/action/dbinsertSpec.php',
+           params: pmeters           
+          }).success(function(response) {
+
+            table.draw();
+           if (typeof response[0] != 'undefined') {
+               $scope.specimen_number = response[0].sprintf_number;
+               $("#txtspecimen_number").val($scope.specimen_number)
+           }
+          });
+
+
+/*
+     $.ajax({
+         type: "POST",
+         url: "views/action/dbinsertSpec.php",
+         data: pmeters,
+         success: function(result) {
+
+             var obj = jQuery.parseJSON(result);
+             if (obj == '') {
+                 alter
+                 $('input[type=text]').val('');
+             } else {
+                 $.each(obj, function(key, inval) {
+                     $("#txtspecimen_number").val(inval["sprintf_number"]);
+                 })
+                 table.draw();
+             }
+         }
+     });
+     */
+ }
+
+
+
 
 
 

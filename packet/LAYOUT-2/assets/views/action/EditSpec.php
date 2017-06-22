@@ -3,38 +3,22 @@ if( ! ini_get('date.timezone') )
 {
     date_default_timezone_set('GMT');
 }
-require('_header.php');
-require('collnolib.php');
-if ( isset($_GET['specid']) )
+REQUIRE('_header.php');
+REQUIRE('collnolib.php');
+
+if ( isset($_GET['specid']) ) 
     {
-	$strSQL = "select * from specimens left join collection on specimens.collection_idcollection = collection.idcollection where specimens.collection_idcollection   = '".$_GET["specid"]."' order by specimen_number desc limit 1 ";
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	$strSQL = "SELECT * FROM specimens 
+	           LEFT JOIN collection ON specimens.collection_idcollection = collection.idcollection 
+	           WHERE specimens.idspecimens   = '".$_GET["specid"]."' order by specimen_number desc limit 1 ";
 	}else{
-
-$strSQL= "select * from collection
-left join specimens on 
-(collection.idcollection = specimens.collection_idcollection)
-left join collectionmethods on idcollectionmethods=collectionmethods_idcollectionmethods
-left join amphurs on idamphurs=amphurs_idamphurs
-left join province on idprovince=province_idprovince
-left join collectors on idcollectors=collectors_idcollectors
-
-
-
-
-
-
-
-
-order by coll_year desc, coll_number desc ,specimen_number desc limit 1";
+	$strSQL = "SELECT * FROM collection
+			   LEFT JOIN specimens ON (collection.idcollection = specimens.collection_idcollection)
+			   LEFT JOIN collectionmethods ON idcollectionmethods=collectionmethods_idcollectionmethods
+			   LEFT JOIN amphurs ON idamphurs=amphurs_idamphurs
+			   LEFT JOIN province ON idprovince=province_idprovince
+			   LEFT JOIN collectors ON idcollectors=collectors_idcollectors
+		       ORDER BY coll_year DESC, coll_number DESC ,specimen_number DESC LIMIT 1";
 
     }
     
@@ -47,6 +31,16 @@ order by coll_year desc, coll_number desc ,specimen_number desc limit 1";
 		$arrCol = array();
 		for($i=0;$i<$intNumField;$i++)
 		{
+			if(pg_field_name($objQuery,$i) == 'specimen_number'){
+				if($obResult[$i]==null){
+					$obResult[$i]=1;
+				}else{
+					$obResult[$i]=$obResult[$i]+1;
+				}
+				
+				$obResult[$i] = sprintf('%04d',$obResult[$i]);			
+			}
+			
 			$arrCol[pg_field_name($objQuery,$i)] = $obResult[$i];
 		}
 		array_push($resultArray,$arrCol);
@@ -54,7 +48,8 @@ order by coll_year desc, coll_number desc ,specimen_number desc limit 1";
 	
 	pg_close($conn);
 	
-	echo json_encode($resultArray);	   
+	echo json_encode($resultArray);	
+
     
 
 
