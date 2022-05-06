@@ -1,0 +1,60 @@
+<div class="swMain-vertical" id="wizard">
+    <!-- start: WIZARD SEPS -->
+    <ul>
+        <li ng-click="setTab(1)">
+            <a ui-sref="app.wmsadmin.product.pmanage.pall" ng-class="{'selected' : isSet(1), 'done' : currentStep > 1}">
+                <div class="stepNumber">
+                    <i class="fa fa-tasks">
+                    </i>
+                </div>
+                <span class="stepDesc text-small">
+                    รายการวัสดุทั้งหมด
+                </span>
+            </a>
+        </li>
+        <li ng-click="setTab(2)">
+            <a ui-sref="app.wmsadmin.product.pmanage.pwaiting" ng-class="{'selected' : isSet(2), 'done' : currentStep > 1}">
+                <div class="stepNumber">
+                    <i class="fa fa-clock-o">
+                    </i>
+                </div>
+                <span class="stepDesc text-small">
+                    รายการรอการยืนยัน
+                </span>
+            </a>
+        </li>
+        <li ng-click="setTab(3)">
+            <a ui-sref="app.wmsadmin.product.pmanage.passign.padd" ng-class="{'selected' : isSet(3), 'done' : currentStep > 3}">
+                <div class="stepNumber">
+                    <i class="fa fa-bar-chart-o">
+                    </i>
+                </div>
+                <span class="stepDesc text-small">
+                    แบบฟอร์ม
+                </span>
+            </a>
+        </li>
+        <li ng-click="setTab(4)">
+            <a ui-sref="app.wmsadmin.product.pmanage.pnew" ng-class="{'selected' : isSet(4), 'done' : currentStep > 2}">
+                <div class="stepNumber">
+                    <i class="fa fa-random">
+                    </i>
+                </div>
+                <span class="stepDesc text-small">
+                    รายการวัสดุรายใหม่
+                </span>
+            </a>
+        </li>
+        <li ng-click="setTab(5)">
+            <a ui-sref="app.wmsadmin.product.pmanage.pcustom.pctype" ng-class="{'selected' : isSet(5), 'done' : currentStep > 2}">
+                <div class="stepNumber">
+                    <i class="fa fa-random">
+                    </i>
+                </div>
+                <span class="stepDesc text-small">
+                    ข้อมูลทั่วไปของวัสดุ
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>

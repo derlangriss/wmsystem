@@ -1,0 +1,300 @@
+<!-- start: FIRST SECTION -->
+
+<div class="container-fluid fadeIn wow" data-wow-delay="0.5s">
+    <div page-loader="">
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-white no-radius no-border">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="panel-body">
+                                        <div>
+                                            <div class="Top bg-primary"></div>
+                                            <div class="pull-left Cells Tabselected label-default">
+                                                {{projectinfo.project}}
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <table class="table table-hover no-padding " id="tspecing">
+                                                    <thead>
+                                                        <tr class="label-default">
+                                                            <th>
+                                                                <span class="label uppercase">
+                                                                        งบประมาณที่ได้รับจัดสรร
+                                                                    </span>
+                                                            </th>
+                                                            <th class="hidden-xs">
+                                                                <span class="label uppercase">
+                                                                        ค่าใช้จ่าย
+                                                                    </span>
+                                                            </th>
+                                                            <th>
+                                                                <span class="label uppercase">
+                                                                        คงเหลือ
+                                                                    </span>
+                                                            </th>
+                                                            <th>
+                                                                <span class="label uppercase">
+                                                                        ตรวจสอบความถูกต้อง
+                                                                    </span>
+                                                            </th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="text-bold">
+                                                                        {{projectinfo.budget}}
+                                                                    </span>
+                                                            </td>
+                                                            <td class="hidden-xs">
+                                                                <span class="text-bold">
+                                                                        {{calculatebudgetinfo.includeexpense}}
+                                                                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-bold">
+                                                                        {{calculatebudgetinfo.balancebudget}}
+                                                                    </span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="checkbox">
+                                                                    <switch ng-model="switchsetting" ng-init="switchsetting = projectinfo.approval" class="green" ng-change="budgetVerified()">
+                                                                    </switch>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="panel-body">
+                                                    <div class="panel panel-white no-radius no-border">
+                                                        <form id="logbookInsform" name="logbookInsform" ng-submit="addlogdata(logbookData,logbookInsform)" novalidate="">
+                                                            <div class="row">
+
+                                                                <div class="col-lg-12">
+                                                                    <div class="panel-left">
+                                                                        <table class="table table-condensed">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th colspan="5">
+                                                                                        <span class="badge badge-danger margin-right-10">
+                                                                                                <i
+                                                                                                    class="fa fa-map-marker"></i>
+                                                                                            </span> หมวดค่าตอบแทน
+                                                                                        <a class="" ng-click="openBudget('right',res1,projectinfo)">
+                                                                                            <i class="fa fa-plus">
+                                                                                                </i>
+                                                                                        </a>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr ng-repeat-start="exlist in res1.expenselist">
+                                                                                    <td>
+                                                                                        <a ng-click="openExpenseDetails('right',exlist.idproject_details)">
+                                                                                                {{exlist.expense_type}}
+                                                                                                <span
+                                                                                                    class="badge badge-info"><i
+                                                                                                        class="fa fa-info"></i></span>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="200px">
+                                                                                        {{exlist.expense_cost}}
+                                                                                    </td>
+
+                                                                                    <td class="hidden-xs" width="10px">
+
+
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="10px">
+                                                                                        <div ng-if="!switchsetting">
+                                                                                            <a ng-click="edit_ex(exlist.idproject_details,projectinfo.idproject_budget)">
+                                                                                                <span class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-edit"></i>
+
+                                                                                                    </span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="10px">
+                                                                                        <div ng-if="!switchsetting">
+                                                                                            <a ng-click="remove_ex(exlist.idproject_details,exlist.idbudget_type)">
+                                                                                                <span class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-trash"></i>
+
+                                                                                                    </span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr ng-repeat-end="">
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <table class="table table-condensed">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th colspan="5">
+                                                                                        <span class="badge badge-danger margin-right-10">
+                                                                                                <i
+                                                                                                    class="fa fa-map-marker"></i>
+                                                                                            </span> หมวดค่าใช้จ่าย
+                                                                                        <a class="" ng-click="openBudget('right',res2,projectinfo)">
+                                                                                            <i class="fa fa-plus">
+                                                                                                </i>
+                                                                                        </a>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr ng-repeat-start="exlist in res2.expenselist">
+                                                                                    <td>
+                                                                                        <a ng-click="openExpenseDetails('right',exlist.idproject_details)">
+                                                                                                {{exlist.expense_type}}
+                                                                                                <span
+                                                                                                    class="badge badge-info"><i
+                                                                                                        class="fa fa-info"></i></span>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="200px">
+                                                                                        {{exlist.expense_cost}}
+                                                                                    </td>
+
+                                                                                    <td class="hidden-xs" width="10px">
+
+
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="10px">
+                                                                                        <div ng-if="!switchsetting">
+                                                                                            <a ng-click="edit_ex(exlist.idproject_details,projectinfo.idproject_budget)">
+                                                                                                <span class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-edit"></i>
+
+                                                                                                    </span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="10px">
+                                                                                        <div ng-if="!switchsetting">
+                                                                                            <a ng-click="remove_ex(exlist.idproject_details,exlist.idbudget_type)">
+                                                                                                <span class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-trash disabled"></i>
+
+                                                                                                    </span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr ng-repeat-end="">
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="panel-left">
+                                                                        <table class="table table-condensed">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th colspan="4">
+                                                                                        <span class="badge badge-danger margin-right-10">
+                                                                                                <i
+                                                                                                    class="fa fa-map-marker"></i>
+                                                                                            </span> หมวดค่าวัสดุ
+                                                                                        <a class="" ng-click="openBudget('right',res3,projectinfo)">
+                                                                                            <i class="fa fa-plus">
+                                                                                                </i>
+                                                                                        </a>
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        <a class="" ng-click="goshopping(projectinfo.idproject_budget)">
+                                                                                            <i class="fa fa-shopping-cart">
+                                                                                            </i>
+                                                                                        </a>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr ng-repeat-start="exlist in res3.expenselist">
+                                                                                    <td>
+                                                                                        <a ng-click="openExpenseDetails('right',exlist.idproject_details)">
+                                                                                                {{exlist.expense_type}}
+                                                                                                <span
+                                                                                                    class="badge badge-info"><i
+                                                                                                        class="fa fa-info"></i></span>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="200px">
+                                                                                        {{exlist.expense_cost}}
+                                                                                    </td>
+
+                                                                                    <td class="hidden-xs" width="10px">
+
+
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="10px">
+                                                                                        <div ng-if="!switchsetting">
+                                                                                            <a ng-click="edit_ex(exlist.idproject_details,projectinfo.idproject_budget)">
+                                                                                                <span class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-edit"></i>
+
+                                                                                                    </span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td class="hidden-xs" width="10px">
+                                                                                        <div ng-if="!switchsetting">
+                                                                                            <a ng-click="remove_ex(exlist.idproject_details,exlist.idbudget_type)">
+                                                                                                <span class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-trash"></i>
+
+                                                                                                    </span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr ng-repeat-end="">
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

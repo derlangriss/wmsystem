@@ -1,0 +1,167 @@
+<div page-loader="">
+</div>
+<div class="pc-innerview fadeIn wow" data-wow-delay="0.5s ">
+    <div class="col pc-options">
+        <div class="pc-options-pcontainer scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div class="panel-body">
+                <div class="partition-grey padding-15 text-center margin-bottom-25">
+                    <h4 class="pcustom ">ปรับปรุงปรายการประเภทสินค้า</h4>
+                </div>
+                <table class="table table-hover no-padding " id="tspecing">
+                    <tbody>
+                        <tr>
+                            <td class="no-bg no-border" rowspan="7">
+                                <div class="row">
+                                    <span class="label card-header-green vertical-label no-padding">
+                                    --------------- Product Type Edit Form ---------------
+                                </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                ชื่อพัสดุ :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <input class="form-control input-vsmex greybackground noborder nopadding" id="txtproduct_name" name="txtproduct_name" ng-model="adminpctype.ptype" ng-required="currentStep == 1" placeholder="ระบุชนิดสินค้า" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100" rowspan="2">
+                                ประเภทวัสดุ :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <select class="selectexpense-type cs-select cs-skin-slide-edit" ng-options="item.idexpense_type as item.expense_type for item in getExpensetype" id="test" ng-model="adminpctype.idexpense_type">
+                                        <option disabled="" value="">
+                                            {{adminpctype.expense_type}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <select class="selectmaterial-type cs-select cs-skin-slide-edit" ng-options="item.idmaterial_type as item.material_type for item in getMaterialtype" ng-change="selectedMaterialtype(adminpctype.idmaterial_type,getMaterialtype)" ng-model="adminpctype.idmaterial_type">
+                                        <option disabled="" value="">
+                                            {{adminpctype.material_type}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                หมายเหตุ :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group">
+                                    <div class="note-editor01">
+                                        <textarea class="form-control text-small" id="txtproductnote" name="txtproductnote" ng-model="adminpctype.ptype_note" style="overflow:auto;resize:none;" tabindex="16">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="pull-right">
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button class="btn btn-primary btn-md" ng-click="ManagePCtype(adminpctype)">
+                                        <span class="glyphicon glyphicon-save">
+                                        </span>
+                                        Save
+                                    </button>
+                                    <!-- Indicates a successful or positive action -->
+                                    <button class="btn btn-danger btn-md" ng-click="resetproduct()" type="button">
+                                        <span class="glyphicon glyphicon-ban-circle">
+                                        </span>
+                                        Reset
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="pp-reader">
+        <div class="pc-innerview2 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover no-padding" id="AdminPCtypeTbl" width="100%">
+                        <thead>
+                            <tr class="uppercase label-default ">
+                                <th rowspan="2">
+                                    <span class="text-white ">
+                                        #
+                                    </span>
+                                </th>
+                                <th class="center" rowspan="2">
+                                    <span class="text-white ">
+                                        id
+                                    </span>
+                                </th>
+                                <th class="center" rowspan="2">
+                                    <span class="text-white ">
+                                        กลุ่มสินค้า
+                                    </span>
+                                </th>
+                                <th class="center" colspan="2">
+                                    <span class="text-white ">
+                                        ประเภทวัสดุ
+                                    </span>
+                                </th>
+                                <th class="center" rowspan="2">
+                                    <span class="text-white ">
+                                        หมายเหตุ
+                                    </span>
+                                </th>
+                                <th rowspan="2">
+                                    <span class="text-white ">
+                                        idmaterial_cost
+                                    </span>
+                                </th>
+                                <th rowspan="2">
+                                    <span class="text-white ">
+                                        idmaterial_type
+                                    </span>
+                                </th>
+                                <th rowspan="2">
+                                    <span class="text-white ">
+                                        idexpense_type
+                                    </span>
+                                </th>
+                                <th rowspan="2">
+                                    <span class="text-white ">
+                                        #
+                                    </span>
+                                </th>
+                            </tr>
+                            <tr class="uppercase label-default ">
+                                <th class="center">
+                                    <span class="label-change ">
+                                        -
+                                    </span>
+                                </th>
+                                <th class="center">
+                                    <span class="label-change ">
+                                        -
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div ng-controller="InventoryPmanageLeftCtrl">
+    <div class=" padding-20 height-230">
+        <h2 class="inline-block text-white">
+            วางแผนการใช้งบประมาณ ปีงบประมาณ {{budgetinfo.THfiscalyear}}
+            </h3>
+            <span class="label label-primary">
+                TH BUDGET
+            </span>
+            <!--span class="label label-inverse">
+                          TH Budget Year {{budgetinfo.THshowbeginbudget}} - {{budgetinfo.THshowendbudget}}
+                      </span-->
+            <span class="cl-effect-3 links block margin-top-10">
+                <a class="uppercase text-white text-uppercase text-bold text-extra-small" href="#"
+                    ng-click="showDatePicker()">
+                    {{budgetinfo.ENshowbeginbudget}} - {{budgetinfo.ENshowendbudget}}
+                    <i class="padding-left-5 fa fa-calendar" id="showdate">
+                    </i>
+                </a>
+            </span>
+
+            <div class="padding-bottom margin-top-10 margin-bottom-10">
+                <uib-progressbar class="progress-xs no-radius background-dark no-margin" type="white" value="respercent">
+                </uib-progressbar>
+            </div>
+    </div>
+</div>
+<!--div class="main-container">
+  <div class="col main-container-panel">
+      <div class="budgetyear scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+          <div class="panel-body no-border ">
+              <table class="table table-stylish table-hover no-margin" id="sample-table-5">
+                  <tbody>
+                      <tr ng-repeat="m in mreportspeclist">
+                          <td class="center text-small">
+                              <span class="text-bold uppercase text-dark margin-right-5">
+                                  <a class="uppercase text-dark text-uppercase" ui-sref="app.dm.happ.monthea.statistic({fiscalmonth:m.reportmonth})">
+                                      {{m.shortenm}}
+                                  </a>
+                              </span>
+                          </td>
+                          <td>
+                              <div class="col-xs-4 no-padding text-center">
+                                  <div class="border-dark padding-5">
+                                      
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr ng-repeat-end="">
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div-->

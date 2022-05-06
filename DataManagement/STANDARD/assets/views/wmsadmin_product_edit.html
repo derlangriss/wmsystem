@@ -1,0 +1,702 @@
+<div class="panel-body">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="Top bg-danger"></div>
+                <div class="pull-left Cells Tabselected label-danger">
+                    {{adminproductinfo.product}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pp-innerview">
+    <div class="col p-options">
+        <div class="p-options-pcontainer scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="center">
+                        <div flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-file-success="uploader.controllerFn($flow, $file, $message)" flow-init="{singleFile:true}" flow-name="obj.flow" flow-object="obj.flow">
+                            <div class="center">
+                                <div class="product-images">
+                                    <div class="thumbnail-product">
+                                        <img alt="" ng-if="!obj.flow.files.length && noImage" ng-src="assets/images/product/{{adminproductinfo.p_image}}">
+                                        <img alt="" ng-if="!obj.flow.files.length && !noImage" ng-src="assets/images/product/{{adminproductinfo.p_image}}">
+                                        <img flow-img="obj.flow.files[0]" ng-if="obj.flow.files.length">
+                                        </img>
+                                        </img>
+                                        </img>
+                                    </div>
+                                </div>
+                                <div class="user-image-buttons" ng-if="obj.flow.files.length">
+                                    <span class="label btn btn-danger" ng-click="obj.flow.cancel()">
+                                        <i class="fa fa-times">
+                                        </i>
+                                    </span>
+                                </div>
+                                <div class="col-sm-12 col-lg-12">
+                                    <div class="panel panel-transparent ">
+                                        <div class="space12 ">
+                                            <div class="btn-group">
+                                                You can drop image file below (.jpg .png only)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <div class="panel panel-transparent ">
+                                            <div class="">
+                                                <div class="btn-group">
+                                                    <span class="btn btn-uploadproduct btn-transparent btn-file">
+                                                          <i class="fa fa-cloud-upload"></i>
+                                                        <input flow-btn="" type="file"/>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-reader">
+        <div class="panel-body">
+            <div class="tabs tabs-style-bar">
+                <nav>
+                    <ul>
+                        <li ng-class="{'tab-current' : isSet2(1)}" ng-click="setTab2(1)"><a class="icon icon-config"><span>info</span></a></li>
+                        <li ng-class="{'tab-current' : isSet2(2)}" ng-click="setTab2(2)"><a class="icon icon-home "><span>Size</span></a></li>
+                        <li ng-class="{'tab-current' : isSet2(3)}" ng-click="setTab2(3)"><a class="icon icon-gift"><span>Feature</span></a></li>
+                        <li ng-class="{'tab-current' : isSet2(4)}" ng-click="setTab2(4)"><a class="icon icon-upload"><span>Brand</span></a></li>
+                        <li ng-class="{'tab-current' : isSet2(5)}" ng-click="setTab2(5)"><a class="icon icon-coffee"><span>Unit</span></a></li>
+                        <li ng-class="{'tab-current' : isSet2(6)}" ng-click="setTab2(6)"><a class="icon icon-config"><span>Vendor</span></a></li>
+                        <li ng-class="{'tab-current' : isSet2(7)}" ng-click="setTab2(7)"><a class="icon icon-config"><span>images</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="pp-innerview2">
+
+            <div class="pp-reader-inner scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="animate-show-hide " ng-show="isSet2(1)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-12">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                        General Information (รายละเอียดทั่วไป)
+                                            </span>
+                                            <span class="badge badge-inverse">
+                                                <i class="fa fa-plus">
+                                                </i>
+                                                    </span>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="width-100">
+                                            ชื่อพัสดุ :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control input-vsmex greybackground noborder nopadding" id="txtproduct_name" name="txtproduct_name" ng-model="adminproductinfo.product" ng-required="currentStep == 1" placeholder="ระบุชื่อสินค้า" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100">
+                                            ประเภทวัสดุ :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <select class="selectexpense-type cs-select cs-skin-slide-edit" ng-options="item.idexpense_type as item.expense_type for item in getExpensetype" ng-change="selectedExpenseInit(adminproductinfo.idexpense_type,getExpensetype)" ng-model="adminproductinfo.idexpense_type">
+                                                    <option disabled="" value="">
+                                                        {{adminproductinfo.expense_type}}
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100">
+                                            ชนิดวัสดุ :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <select class="selectmaterial-type cs-select cs-skin-slide-edit" ng-options="item.idmaterial_type as item.material_type for item in getMaterialtype" ng-change="selectedMaterialtype(adminproductinfo.idmaterial_type,getMaterialtype)" ng-model="adminproductinfo.idmaterial_type">
+                                                    <option disabled="" value="">
+                                                        {{adminproductinfo.material_type}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100">
+                                            หมายเหตุ :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group">
+                                                <div class="note-editor01">
+                                                    <textarea class="form-control text-small" id="txtproductnote" name="txtproductnote" ng-model="adminproductinfo.product_note" style="overflow:auto;resize:none;" tabindex="16">
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="width-100">
+
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="pull-right">
+                                                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                                <button class="btn btn-primary btn-md" ng-click="editproduct(adminproductinfo)">
+                                                    <span class="glyphicon glyphicon-save">
+                                                    </span>
+                                                    Save
+                                                </button>
+                                                <!-- Indicates a successful or positive action -->
+                                                <button class="btn btn-danger btn-md" ng-click="resetproduct()" type="button">
+                                                    <span class="glyphicon glyphicon-ban-circle">
+                                                    </span>
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-show-hide " ng-show="isSet2(2)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-6">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                        Product Size (ขนาดมาตรฐานสินค้า)
+                                            </span>
+                                            <span class="badge badge-inverse">
+                                                <i class="fa fa-plus">
+                                                </i>
+                                            </span>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td class="hidden-xs">
+                                            <input class="form-control input-vsmex greybackground noborder nopadding psize" id="p_size" name="p_size" ng-model="myModelPSizelist" placeholder="Enter Size" tabindex="19" type="text" typeahead-loading="loadingSize" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                                uib-typeahead="o as o.size for o in PSizeKeyup($viewValue)" />
+                                        </td>
+                                        <td class="width-50">
+                                            <a class="btn btn-xs btn-transparent" ng-click="addPSize();">
+                                                <i class="fa fa-arrow-circle-down">
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <h5 class="over-title margin-bottom-15">รายการ <span class="text-bold">ขนาดมาตรฐานสินค้า</span></h5>
+                                <p>
+                                    Add
+                                    <code>
+                                        .table-bordered
+                                    </code> for borders on all sides of the table and cells.
+                                </p>
+                                <table class="table table-bordered table-hover" id="sample-table-5">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับที่</th>
+                                            <th>ขนาดมาตรฐานสินค้า</th>
+                                            <th class="hidden-xs">รายละเอียด</th>
+                                            <th class="hidden-xs">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="size in adminproductinfo.sizeea">
+                                            <td class="width-100">
+                                                {{size.sizeseq}}
+                                            </td>
+                                            <td>
+                                                {{size.size}}
+                                            </td>
+                                            <td class="hidden-xs">{{size.size_desc}}</td>
+                                            <td class="width-50">
+                                                <span class="btn label label-sm label-danger" ng-click="removePSize(size.idpsize)">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end=" ">
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-show-hide " ng-show="isSet2(3)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-6">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                        Product Feature (ลักษณะเฉพาะสินค้า)
+                                            </span>
+                                            <span class="badge badge-inverse">
+                                                <i class="fa fa-plus">
+                                                </i>
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td class="hidden-xs">
+                                            <input class="form-control input-vsmex greybackground noborder nopadding" id="p_feature" name="p_feature" ng-model="myModelPFeaturelist" placeholder="Enter Feature" type="text" typeahead-loading="loadingFeature" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                                uib-typeahead="o as o.feature for o in PFeatureKeyup($viewValue)" />
+                                        </td>
+                                        <td class="width-50">
+                                            <a class="btn btn-xs btn-transparent" ng-click="addPFeature();">
+                                                <i class="fa fa-arrow-circle-down">
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <h5 class="over-title margin-bottom-15">รายการ <span class="text-bold">ลักษณะเฉพาะสินค้า</span></h5>
+                                <p>
+                                    Add
+                                    <code>
+                                        .table-bordered
+                                    </code> for borders on all sides of the table and cells.
+                                </p>
+                                <table class="table table-bordered table-hover" id="sample-table-5">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับที่</th>
+                                            <th>ลักษณะเฉพาะสินค้า</th>
+                                            <th class="hidden-xs">รายละเอียด</th>
+                                            <th class="hidden-xs">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="feature in adminproductinfo.featureea">
+                                            <td class="width-100">
+                                                {{feature.featureseq}}
+                                            </td>
+                                            <td>
+                                                {{feature.feature}}
+                                            </td>
+                                            <td class="hidden-xs">{{feature.feature_desc}}</td>
+                                            <td class="width-50">
+                                                <span class="btn label label-sm label-danger" ng-click="removePFeature(feature.idpfeature)">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end=" ">
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-show-hide " ng-show="isSet2(4)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-6">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                        Product Brand (ตราสินค้า)
+                                            </span>
+                                            <span class="badge badge-inverse">
+                                                <i class="fa fa-plus">
+                                                </i>
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td class="hidden-xs">
+                                            <input class="form-control input-vsmex greybackground noborder nopadding" id="p_brand" name="p_brand" ng-model="myModelPBrandlist" placeholder="Enter brand" type="text" typeahead-loading="loadingbrand" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                                uib-typeahead="o as o.brand for o in PBrandKeyup($viewValue)" />
+                                        </td>
+                                        <td class="width-50">
+                                            <a class="btn btn-xs btn-transparent" ng-click="addPBrand();">
+                                                <i class="fa fa-arrow-circle-down">
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <h5 class="over-title margin-bottom-15">รายการ <span class="text-bold">ตราสินค้า</span></h5>
+                                <p>
+                                    Add
+                                    <code>
+                                        .table-bordered
+                                    </code> for borders on all sides of the table and cells.
+                                </p>
+                                <table class="table table-bordered table-hover" id="sample-table-5">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับที่</th>
+                                            <th>ตราสินค้า</th>
+                                            <th class="hidden-xs">รายละเอียด</th>
+                                            <th class="hidden-xs">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="brand in adminproductinfo.brandea">
+                                            <td class="width-100">
+                                                {{brand.brandseq}}
+                                            </td>
+                                            <td>
+                                                {{brand.brand}}
+                                            </td>
+                                            <td class="hidden-xs">{{brand.brand_desc}}</td>
+                                            <td class="width-50">
+                                                <span class="btn label label-sm label-danger" ng-click="removePBrand(brand.idpbrand)">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end=" ">
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-show-hide " ng-show="isSet2(5)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-6">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                        Product Unit (หน่วยนับสินค้า)
+                                            </span>
+                                            <span class="badge badge-inverse">
+                                                <i class="fa fa-plus">
+                                                </i>
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td class="hidden-xs">
+                                            <input class="form-control input-vsmex greybackground noborder nopadding" id="p_unit" name="p_unit" ng-model="myModelPUnitlist" placeholder="Enter unit" type="text" typeahead-loading="loadingunit" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                                uib-typeahead="o as o.unit for o in PUnitKeyup($viewValue)" />
+                                        </td>
+                                        <td class="width-50">
+                                            <a class="btn btn-xs btn-transparent" ng-click="addPUnit();">
+                                                <i class="fa fa-arrow-circle-down">
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <h5 class="over-title margin-bottom-15">รายการ <span class="text-bold">หน่วยนับสินค้า</span></h5>
+                                <p>
+                                    Add
+                                    <code>
+                                        .table-bordered
+                                    </code> for borders on all sides of the table and cells.
+                                </p>
+                                <table class="table table-bordered table-hover" id="sample-table-5">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับที่</th>
+                                            <th>หน่วยนับสินค้า</th>
+                                            <th class="hidden-xs">รายละเอียด</th>
+                                            <th class="hidden-xs">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="unit in adminproductinfo.unitea">
+                                            <td class="width-100">
+                                                {{unit.unitseq}}
+                                            </td>
+                                            <td>
+                                                {{unit.unit}}
+                                            </td>
+                                            <td class="hidden-xs">{{unit.unit_desc}}</td>
+                                            <td class="width-50">
+                                                <span class="btn label label-sm label-danger" ng-click="removePUnit(unit.idpunit)">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end=" ">
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-show-hide " ng-show="isSet2(6)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-6">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                        Product Vendor (ผู้จำหน่ายสินค้า)
+                                            </span>
+                                            <span class="badge badge-inverse">
+                                                <i class="fa fa-plus">
+                                                </i>
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td class="hidden-xs">
+                                            <input class="form-control input-vsmex greybackground noborder nopadding" id="p_vendor" name="p_vendor" ng-model="myModelPVendorlist" placeholder="Enter vendor" type="text" typeahead-loading="loadingvendor" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                                uib-typeahead="o as o.vendor for o in PVendorKeyup($viewValue)" />
+                                        </td>
+                                        <td class="width-50">
+                                            <a class="btn btn-xs btn-transparent" ng-click="addPVendor();">
+                                                <i class="fa fa-arrow-circle-down">
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <h5 class="over-title margin-bottom-15">รายการ <span class="text-bold">ผู้จำหน่ายสินค้า</span></h5>
+                                <p>
+                                    Add
+                                    <code>
+                                        .table-bordered
+                                    </code> for borders on all sides of the table and cells.
+                                </p>
+                                <table class="table table-bordered table-hover" id="sample-table-5">
+                                    <thead>
+                                        <tr>
+                                            <th>ลำดับที่</th>
+                                            <th>ผู้จำหน่ายสินค้า</th>
+                                            <th class="hidden-xs">รายละเอียด</th>
+                                            <th class="hidden-xs">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat-start="vendor in adminproductinfo.vendorea">
+                                            <td class="width-100">
+                                                {{vendor.vendorseq}}
+                                            </td>
+                                            <td>
+                                                {{vendor.vendor}}
+                                            </td>
+                                            <td class="hidden-xs">{{vendor.vendor_desc}}</td>
+                                            <td class="width-50">
+                                                <span class="btn label label-sm label-danger" ng-click="removePVendor(vendor.idpvendor)">
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr ng-repeat-end=" ">
+                                        </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-show-hide " ng-show="isSet2(7)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-md-12">
+                            <div class="col-md-9 file-upload" style="margin-bottom: 40px">
+                                <h4>
+                                    The queue
+                                </h4>
+                                <p>
+                                    Queue length: {{ uploaderImages.queue.length }}
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">
+                                                    Name
+                                                </th>
+                                                <th ng-show="uploaderImages.isHTML5">
+                                                    Size
+                                                </th>
+                                                <th ng-show="uploaderImages.isHTML5">
+                                                    Progress
+                                                </th>
+                                                <th>
+                                                    Status
+                                                </th>
+                                                <th>
+                                                    Actions
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in uploaderImages.queue">
+                                                <td>
+                                                    <strong>
+                                                        {{ item.file.name }}
+                                                    </strong>
+                                                    <!-- Image preview -->
+                                                    <!--auto height-->
+                                                    <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                                                    <!--auto width-->
+                                                    <div ng-show="uploaderImages.isHTML5" ng-thumb="{ file: item._file, height: 100 }">
+                                                    </div>
+                                                    <!--fixed width and height -->
+                                                    <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                                                </td>
+                                                <td ng-show="uploaderImages.isHTML5" nowrap="">
+                                                    {{ item.file.size/1024/1024|number:2 }} MB
+                                                </td>
+                                                <td ng-show="uploaderImages.isHTML5">
+                                                    <div class="progress progress-xs margin-bottom-0">
+                                                        <div class="progress-bar" ng-style="{ 'width': item.progress + '%' }" role="progressbar">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span ng-show="item.isSuccess">
+                                                        <i class="glyphicon glyphicon-ok">
+                                                        </i>
+                                                    </span>
+                                                    <span ng-show="item.isCancel">
+                                                        <i class="glyphicon glyphicon-ban-circle">
+                                                        </i>
+                                                    </span>
+                                                    <span ng-show="item.isError">
+                                                        <i class="glyphicon glyphicon-remove">
+                                                        </i>
+                                                    </span>
+                                                </td>
+                                                <td nowrap="">
+
+                                                    <button class="btn btn-danger btn-xs" ng-click="removeFile(item)" type="button">
+                                                        <span class="glyphicon glyphicon-trash">
+                                                        </span>
+                                                        Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <div>
+                                        Queue progress:
+                                        <div class="progress progress-xs margin-top-5 margin-bottom-20">
+                                            <div class="progress-bar" ng-style="{ 'width': uploaderImages.progress + '%' }" role="progressbar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-s" ng-click="uploaderImages.uploadAll()" ng-disabled="!uploaderImages.getNotUploadedItems().length" type="button">
+                                        <span class="glyphicon glyphicon-upload">
+                                        </span>
+                                        Upload all
+                                    </button>
+                                    <button class="btn btn-primary btn-o btn-s" ng-click="uploaderImages.cancelAll()" ng-disabled="!uploaderImages.isUploading" type="button">
+                                        <span class="glyphicon glyphicon-ban-circle">
+                                        </span>
+                                        Cancel all
+                                    </button>
+                                    <button class="btn btn-primary btn-o btn-s" ng-click="uploaderImages.clearQueue()" ng-disabled="!uploaderImages.queue.length" type="button">
+                                        <span class="glyphicon glyphicon-trash">
+                                        </span>
+                                        Remove all
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>
+                                    Select files
+                                </h5>
+                                <div class="panel panel-white">
+                                    <div class="panel-body">
+                                        <div ng-show="uploaderImages.isHTML5">
+                                            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                                            <div class="well my-drop-zone" nv-file-over="" uploader="uploaderImages">
+                                                Base drop zone
+                                            </div>
+                                            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                                            <div nv-file-drop="" options="{ url: '/foo' }" uploader="uploaderImages">
+                                                <div class="well my-drop-zone" nv-file-over="" over-class="another-file-over-class" uploader="uploaderImages">
+                                                    Another drop zone with its own settings
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                                        <span class="btn btn-primary btn-o btn-file">
+                                            Select an image file
+                                            <input multiple="" nv-file-select="" type="file"
+                                                uploader="uploaderImages" />
+                                        </span>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

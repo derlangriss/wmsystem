@@ -1,0 +1,200 @@
+<!-- start: FIRST SECTION -->
+<div page-loader="">
+    <div class="rect1">
+    </div>
+    <div class="rect2">
+    </div>
+    <div class="rect3">
+    </div>
+    <div class="rect4">
+    </div>
+    <div class="rect5">
+    </div>
+</div>
+<div class="container-fluid container-fullw fadeIn wow no-margin" data-wow-delay="0.5s">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="row">
+                            <div class="panel-heading">
+                                <h5 class="text-bold text-extra-small text-dark-transparent text-uppercase">
+                                    Wish List
+                                    <i class="fa fa-arrow-circle-o-right">
+                                        </i>
+                                </h5>
+                                <h3>
+                                    รายการพัสดุที่ต้องการจัดซื้อ 2563
+                                </h3>
+                                <span class="cl-effect-3 links block margin-top-10">
+                                        <a class="uppercase text-dark text-uppercase text-bold text-extra-small" ng-click="savewishlist1()">
+                                            บันทึกข้อมูลการทำแผน :
+                                        </a>
+                                        <span>
+                                            <i class="padding-left-5 fa fa-file-text">
+                                            </i>
+                                        </span>
+                                <span class="label partition-purple">
+                                            Do not save
+                                        </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="panel" id="visits">
+                            <div class="margin-top-15">
+                                <div class="row">
+                                    <div class="focusguard" id="focusguard-1" tabindex="1">
+                                    </div>
+                                    <table class="table table-hover no-padding " id="tspecing">
+                                        <thead>
+                                            <tr class="label-default">
+                                                <th>
+                                                    <span class="label uppercase">
+                                                            งบประมาณ
+                                                        </span>
+                                                </th>
+                                                <th class="hidden-xs">
+                                                    <span class="label uppercase">
+                                                            แผนการใช้จ่าย
+                                                        </span>
+                                                </th>
+                                                <th class="hidden-xs">
+                                                    <span class="label uppercase">
+                                                            แผนการประเมิน
+                                                        </span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-large text-bold" id="disburse">
+                                                            {{expenseplanning.disburse}}
+                                                        </span>
+                                                </td>
+                                                <td class="hidden-xs">
+                                                    <span class="text-large text-bold" id="subtotal">
+                                                        </span>
+                                                </td>
+                                                <td class="hidden-xs">
+                                                    <span class="text-large text-bold" id="avgbudget">
+                                                        </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="focusguard" id="focusguard-2" tabindex="{{countarr}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <table class="table table-bordered table-hover no-padding" id="ExpensePlanningTbl" width="100%">
+                        <thead>
+                            <tr class="uppercase label-default ">
+                                <th>
+                                    <span class="text-white">
+                                            #
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            idproduct
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ประเภท
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ชนิด
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            รายการ
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ขนาด
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            คุณลักษณะเฉพาะ
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ยี่ห้อ
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            จำนวน
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            หน่วย
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ร้านค้า
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ราคาต่อหน่วย
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ราคารวม
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            ราคาประเมิน
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            idbrand
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            idunit
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            idsupplier
+                                        </span>
+                                </th>
+                                <th>
+                                    <span class="text-white">
+                                            idcatagory
+                                        </span>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end: FIRST SECTION -->
+</div>

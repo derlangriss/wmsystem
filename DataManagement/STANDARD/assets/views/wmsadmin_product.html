@@ -1,0 +1,21 @@
+<div ct-fullheight="" data-ct-fullheight-exclusion="header, footer">
+    <div active-class="message-open" class="application" id="application" ng-controller="adminMainProductCtrl" toggleable="">
+        <!-- start: EMAIL OPTIONS -->
+        <div class="col-right vertical-menu">
+            <div class="innerwrap-list">
+                <div class="appinner-menu scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                    <div ui-view="firstview">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pp-reader">
+            <div class="pp-subview scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="pageLoader hide" page-loader="">
+                </div>
+                <div ui-view="secondview">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

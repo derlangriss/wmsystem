@@ -1,0 +1,47 @@
+<!-- start: MESSAGES -->
+<div ct-fullheight="" data-ct-fullheight-exclusion="header, footer">
+    <!-- /// controller:  'InboxCtrl' -  localtion: assets/js/controllers/inboxCtrl.js /// -->
+    <div active-class="message-open" class="application" id="application" toggleable ng-controller="ApplicationMainCtrl">
+        <!-- start: EMAIL OPTIONS -->
+        <div class="col main-panel ">
+            <div class="panel-azure mainwrap-list">
+           
+                    <div class=" padding-20 height-230">
+                        <h2 class="inline-block text-white Cells">
+                            วางแผนการใช้งบประมาณ ปีงบประมาณ {{budgetinfo.THfiscalyear}}
+                            </h3>
+                            <span class="label label-primary">
+                                TH BUDGET
+                            </span>
+                            <!--span class="label label-inverse">
+                                          TH Budget Year {{budgetinfo.THshowbeginbudget}} - {{budgetinfo.THshowendbudget}}
+                                      </span-->
+                            <span class="cl-effect-3 links block margin-top-10">
+                                <a class="uppercase text-white text-uppercase text-bold text-extra-small" href="#"
+                                    ng-click="showDatePicker()">
+                                    {{budgetinfo.ENshowbeginbudget}} - {{budgetinfo.ENshowendbudget}}
+                                    <i class="padding-left-5 fa fa-calendar" id="showdate">
+                                    </i>
+                                </a>
+                            </span>
+
+                            <div class="padding-bottom margin-top-10 margin-bottom-10">
+                                <uib-progressbar class="progress-xs no-radius background-dark no-margin" type="white" value="respercent">
+                                </uib-progressbar>
+                            </div>
+                    </div>
+               
+
+            </div>
+        </div>
+        <!-- end: EMAIL OPTIONS -->
+
+        <!-- start: EMAIL READER -->
+        <div class="main-view">
+            <div class="submain-view scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div ui-view="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

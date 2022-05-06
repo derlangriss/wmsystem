@@ -1,0 +1,355 @@
+<div class="p-subresult-view">
+    <!-- start: EMAIL LIST -->
+    <div class="col p-left">
+        <div class="labelwrap-list">
+            <div class="ppanel-zero scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="panel-body">
+                    <div class="padding-5">
+                        <div class="col-sm-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            <h2>
+                                                {{p_details.product}}
+                                            </h2>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a ng-click="pedit()">
+                                                {{p_details.catagory}} (  {{p_details.supplies_type}} )
+                                                <i class="fa fa-edit">
+                                                </i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Product supplier (ผู้ขาย)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <nav class="links cl-effect-2" id="cl-effect-2">
+                                                <a ng-class="{'cleff2select': changestyle4(d.idproduct_supplier)}" ng-repeat="d in p_details.supplier">
+                                                    <span data-hover="{{d.supplier}}" ng-click="getidsupplier(d.idproduct_supplier)">
+                                                        {{d.supplier}}
+                                                    </span>
+                                                </a>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Product Brand (ตราสินค้า)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <nav class="links cl-effect-2" id="cl-effect-2">
+                                                <a ng-class="{'cleff2select': changestyle5(d.idproduct_brand)}" ng-repeat="d in p_details.brand">
+                                                    <span data-hover="{{d.brand}}" ng-click="getidbrand(d.idproduct_brand)">
+                                                        {{d.brand}}
+                                                    </span>
+                                                </a>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Product Size (ขนาดมาตรฐานสินค้า)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <nav class="links cl-effect-2" id="cl-effect-2">
+                                                <a ng-class="{'cleff2select': changestyle1(d.idproduct_size)}" ng-repeat="d in p_details.size">
+                                                    <span data-hover="{{d.size}}" ng-click="getidsize(d.idproduct_size)">
+                                                        {{d.size}}
+                                                    </span>
+                                                </a>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Product Feature (คุณลักษณะเฉพาะ)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <nav class="links cl-effect-2" id="cl-effect-2">
+                                                <a ng-class="{'cleff2select': changestyle2(d.idproduct_feature)}" ng-repeat="d in p_details.feature">
+                                                    <span data-hover="{{d.feature}}" ng-click="getidfeature(d.idproduct_feature)">
+                                                        {{d.feature}}
+                                                    </span>
+                                                </a>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Product Unit (หน่วยนับ)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <nav class="links cl-effect-2" id="cl-effect-2">
+                                                <a ng-class="{'cleff2select': changestyle3(d.idproduct_unit)}" ng-repeat="d in p_details.unit">
+                                                    <span data-hover="{{d.unit}}" ng-click="getidunit(d.idproduct_unit)">
+                                                        {{d.unit}}
+                                                    </span>
+                                                </a>
+                                            </nav>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Quantity Per Unit (จำนวนต่อหน่วย)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input class="number" data-max="1000000000" data-verticalbuttons="true" data-verticaldownclass="ti-angle-down" data-verticalupclass="ti-angle-up" id="demo4" name="demo4" ng-model="myModelQTYperUnit" tabindex="2" touchspin="" type="text" value="1">
+                                            </input>
+                                        </td>
+                                        <td>
+                                            <input class="form-control input-vsmex greybackground noborder nopadding" id="p_subunit" name="p_subunit" ng-model="myModelSubUnitlist" placeholder="Enter SubUnit" tabindex="3" type="text" typeahead-loading="loadingSubUnit" typeahead-no-results="noResults"
+                                                typeahead-on-select="onSelect($item, $model, $label,$event)" uib-typeahead="o as o.subunit for o in SubUnitKeyup($viewValue)" />
+                                            <div id="focusguard-2">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">
+                                            Product Price (ราคา)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <form class="form-inline" role="form">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            $$
+                                                        </div>
+                                                        <input class="form-control number" ng-model="proinfo.tproduct_price" placeholder="Enter Price" type="text">
+                                                        </input>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-primary " ng-click="addPrice()">
+                                                    <i class="glyphicon glyphicon-share">
+                                                    </i>
+                                                </a>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-inner">
+        <!-- start: LINK EFFECT 8 -->
+        <div class="container">
+            <div class="row">
+                <div class="panel-body">
+                    <div id="cssmenu">
+                        <ul>
+                            <li ng-class="{'active' : isSet2(1), 'done' : currentStep > 1}" ng-click="setTab2(1)">
+                                <a href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-info">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        Product Info
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="disabled" ng-class="{'active' : isSet2(2), 'done' : currentStep > 2}" ng-click="setTab2(2)">
+                                <a class="disable" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-image">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        Product Image
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="disabled" ng-class="{'active' : isSet2(3), 'done' : currentStep > 3}" ng-click="setTab2(3)">
+                                <a class="disable" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-archive">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        Product Feature
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="disabled" ng-class="{'active' : isSet2(4), 'done' : currentStep > 4}" ng-click="setTab2(4)">
+                                <a class="disable" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-users">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        Product Supplier
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="disabled" ng-class="{'active' : isSet2(4), 'done' : currentStep > 5}" ng-click="setTab2(5)">
+                                <a class="disable" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-podcast">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        Product Unit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(1)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel panel-transparent">
+                            <div class="">
+                                <table class="table table-bordered table-hover no-padding" id="ProductRegisterTbl" width="100%">
+                                    <thead>
+                                        <tr class="uppercase label-default ">
+                                            <th>
+                                                <span class="label-change ">
+                                                    #
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    idproduct
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    รายการ
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    ขนาด
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    คุณลักษณะเฉพาะ
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    ยี่ห้อ
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    หน่วย
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    จำนวนต่อหน่วย
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    ร้านค้า
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    ราคาต่อหน่วย
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    idbrand
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    idunit
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="label-change ">
+                                                    idsupplier
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

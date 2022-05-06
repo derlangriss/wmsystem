@@ -1,0 +1,124 @@
+<div page-loader="">
+</div>
+<div class="pc-innerview fadeIn wow" data-wow-delay="0.5s ">
+    <div class="col pc-options">
+        <div class="pc-options-pcontainer scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div class="panel-body">
+                <div class="partition-grey padding-15 text-center margin-bottom-25">
+                    <h4 class="pcustom ">ปรับปรุงปรายการลักษณะเฉพาะสินค้า</h4>
+                </div>
+                <table class="table table-hover no-padding " id="tspecing">
+                    <tbody>
+                        <tr>
+                            <td class="no-bg no-border" rowspan="7">
+                                <div class="row">
+                                    <span class="label card-header-green vertical-label no-padding">
+                                    --------------- Product Feature Edit Form ---------------
+                                </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                ลักษณะเฉพาะ:
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <input class="form-control input-vsmex greybackground noborder nopadding" id="feature" name="feature" ng-model="adminpcfeature.feature" ng-required="currentStep == 1" placeholder="ระบุชื่อสินค้า" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                คำอธิบาย :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <input class="form-control input-vsmex greybackground noborder nopadding" id="feature_desc" name="feature_desc" ng-model="adminpcfeature.feature_desc" ng-required="currentStep == 1" placeholder="ระบุลักษณะเฉพาะ" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                หมายเหตุ :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group">
+                                    <div class="note-editor01">
+                                        <textarea class="form-control text-small" id="feature_note" name="feature_note" ng-model="adminpcfeature.feature_note" style="overflow:auto;resize:none;" tabindex="16">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="pull-right">
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button class="btn btn-primary btn-md" ng-click="ManagePCfeature(adminpcfeature)">
+                                        <span class="glyphicon glyphicon-save">
+                                        </span>
+                                        Save
+                                    </button>
+                                    <!-- Indicates a successful or positive action -->
+                                    <button class="btn btn-danger btn-md" ng-click="resetproduct()" type="button">
+                                        <span class="glyphicon glyphicon-ban-circle">
+                                        </span>
+                                        Reset
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="pp-reader">
+        <div class="pc-innerview2 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover no-padding" id="AdminPCfeatureTbl" width="100%">
+                        <thead>
+                            <tr class="uppercase label-default ">
+                                <th>
+                                    <span class="text-white ">
+                                        #
+                                    </span>
+                                </th>
+                                <th class="center">
+                                    <span class="text-white ">
+                                        id
+                                    </span>
+                                </th>
+                                <th class="center">
+                                    <span class="text-white ">
+                                        ตราสินค้า
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="text-white ">
+                                        คำอธิบาย
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="text-white ">
+                                        หมายเหตุ
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="text-white ">
+                                        #
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
