@@ -1,0 +1,186 @@
+<div class="p-subresult-view">
+    <div class="pp-inner scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel-body">
+
+                        <div class="Top bg-danger"></div>
+                        <div class="pull-left Cells Tabselected label-danger">
+                            {{adminproductinfo.product}}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="col-md-6">
+                        <table class="table table-hover no-padding " id="tspecing">
+                            <thead>
+                                <tr class="label-default">
+                                    <th>
+                                        <span class="label uppercase">
+                                            ประเภทสินค้า
+                                        </span>
+                                    </th>
+                                    <th class="hidden-xs">
+                                        <span class="label uppercase">
+                                            ชนิด
+                                        </span>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="text-bold">
+                                            {{adminproductinfo.expense_type}}
+                                        </span>
+                                    </td>
+                                    <td class="hidden-xs">
+                                        <span class="text-bold">
+                                            {{adminproductinfo.material_type}}
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel-body">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        <span class="badge badge-danger margin-right-10">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>ขนาดสินค้า
+                                        <a class="" ng-click="openPdetails('right',psize)">
+                                            <i class="fa fa-plus">
+                                            </i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="size in adminproductinfo.sizeea">
+                                    <td>
+                                        {{size.size}}
+                                    </td>
+
+                                </tr>
+                                <tr ng-repeat-end=" ">
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        <span class="badge badge-danger margin-right-10">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>ลักษณะเฉพาะสินค้า
+                                        <a class="" ng-click="openPdetails('right',pfeature)">
+                                            <i class="fa fa-plus">
+                                            </i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="feature in adminproductinfo.featureea">
+                                    <td>
+                                        {{feature.feature}}
+                                    </td>
+
+                                </tr>
+                                <tr ng-repeat-end=" ">
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        <span class="badge badge-danger margin-right-10">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>ตราสินค้า
+                                        <a class="" ng-click="openPdetails('right',pbrand)">
+                                            <i class="fa fa-plus">
+                                            </i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="brand in adminproductinfo.brandea">
+                                    <td>
+                                        {{brand.brand}}
+                                    </td>
+                                </tr>
+                                <tr ng-repeat-end=" ">
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel-body">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        <span class="badge badge-danger margin-right-10">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>ผู้จำหน่าย
+                                        <a class="" ng-click="openPdetails('right',pvendor)">
+                                            <i class="fa fa-plus">
+                                            </i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="vendor in adminproductinfo.vendorea">
+                                    <td>
+                                        {{vendor.vendor}}
+                                    </td>
+
+                                </tr>
+                                <tr ng-repeat-end=" ">
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        <span class="badge badge-danger margin-right-10">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>หน่วยนับ
+                                        <a class="" ng-click="openPdetails('right',punit)">
+                                            <i class="fa fa-plus">
+                                            </i>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat-start="unit in adminproductinfo.unitea">
+                                    <td>
+                                        {{unit.unit}}
+                                    </td>
+
+                                </tr>
+                                <tr ng-repeat-end=" ">
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

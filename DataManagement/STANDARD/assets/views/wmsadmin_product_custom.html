@@ -1,0 +1,15 @@
+<div class="tabs tabs-style-fillup-pc">
+    <nav>
+        <ul>
+            <li ng-class="{'tab-current' : isSetPC(1)}"><a class="icon icon-pctype " ui-sref="app.wmsadmin.product.pmanage.pcustom.pctype"><span>Product Type</span></a></li>
+            <li ng-class="{'tab-current' : isSetPC(2)}"><a class="icon icon-pcsize" ui-sref="app.wmsadmin.product.pmanage.pcustom.pcsize"><span>Product Size</span></a></li>
+            <li ng-class="{'tab-current' : isSetPC(3)}"><a class="icon icon-pcfeature" ui-sref="app.wmsadmin.product.pmanage.pcustom.pcfeature"><span>Product Feature</span></a></li>
+            <li ng-class="{'tab-current' : isSetPC(4)}"><a class="icon icon-pcbrand" ui-sref="app.wmsadmin.product.pmanage.pcustom.pcbrand"><span>Brand</span></a></li>
+            <li ng-class="{'tab-current' : isSetPC(5)}"><a class="icon icon-pcunit" ui-sref="app.wmsadmin.product.pmanage.pcustom.pcunit"><span>Product Unit</span></a></li>
+            <li ng-class="{'tab-current' : isSetPC(6)}"><a class="icon icon-pcvendor" ui-sref="app.wmsadmin.product.pmanage.pcustom.pcvendor"><span>Vendor</span></a></li>
+        </ul>
+    </nav>
+</div>
+<div class="pp-innerview2">
+    <div ui-view="" class="fade-in"></div>
+</div>

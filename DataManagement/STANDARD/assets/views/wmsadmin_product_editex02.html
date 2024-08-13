@@ -1,0 +1,1493 @@
+<div class="p-subresult-view">
+    <!-- start: EMAIL LIST -->
+    <div class="col p-left">
+        <div class="">
+            <div class="ppanel-zero scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="panel-body">
+                    <div class="movie-card">
+                        <div class="movie-header manOfSteel">
+                        </div>
+                        <!--movie-header-->
+                        <div class="movie-content">
+                            <div class="movie-content-header">
+                                <a href="#">
+                                    <h2 class="movie-title text-white">
+                                        {{adminproductinfo.product}}
+                                    </h2>
+                                </a>
+                            </div>
+                        </div>
+                        <!--movie-content-->
+                    </div>
+                    <!--movie-card-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-inner">
+        <!-- start: LINK EFFECT 8 -->
+        <div class="container">
+            <div class="row">
+                <div class="panel-body">
+                    <div id="cssmenu">
+                        <ul>
+                            <li ng-class="{'active' : isSet2(1), 'done' : currentStep > 1}" ng-click="setTab2(1)">
+                                <a href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-info">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        --Info--
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="" ng-class="{'active' : isSet2(2), 'done' : currentStep > 2}" ng-click="setTab2(2)">
+                                <a class="" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-image">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        --Size--
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="" ng-class="{'active' : isSet2(3), 'done' : currentStep > 3}" ng-click="setTab2(3)">
+                                <a class="" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-archive">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        -Featured-
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="" ng-class="{'active' : isSet2(4), 'done' : currentStep > 4}" ng-click="setTab2(4)">
+                                <a class="" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-users">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        --Unit--
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="" ng-class="{'active' : isSet2(7), 'done' : currentStep > 7}" ng-click="setTab2(7)">
+                                <a class="" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-podcast">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        -Brand-
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="" ng-class="{'active' : isSet2(5), 'done' : currentStep > 5}" ng-click="setTab2(5)">
+                                <a class="" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-podcast">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        -Vendor-
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="" ng-class="{'active' : isSet2(6), 'done' : currentStep > 6}" ng-click="setTab2(6)">
+                                <a class="" href="">
+                                    <div class="stepNumber">
+                                        <i class="fa fa-podcast">
+                                        </i>
+                                    </div>
+                                    <span class="stepDesc text-small">
+                                        --Image--
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(1)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-sm-4">
+                    <div class="panel">
+                        <div class="panel panel-transparent">
+                            <div class="">
+                                <form id="ProductForm" name="ProductForm" ng-submit="EditProduct(ProductForm,productinfo)" novalidate="">
+                                    <table class="table table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3">
+                                                    <div class="media padding-left-10 padding-right-10">
+                                                        <div class="pull-left text-extra-large" href="">
+                                                            <i class="fa fa-map-marker">
+                                                            </i>
+                                                        </div>
+                                                        <div class="">
+                                                            <strong>
+                                                                <span class="text-medium">
+                                                                    Product Details (รายละเอียดสินค้า)
+                                                                </span>
+                                                            </strong>
+                                                            <br>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="width-100">
+                                                    <!--a ng-click="InventNewItem()">
+                                                        <span>
+                                                            <i class="fa fa-arrow-circle-right">
+                                                            </i>
+                                                        </span>
+                                                    </a-->
+                                                    <div ng-class="{'has-error':ProductForm.txtproduct_name.$dirty && ProductForm.txtproduct_name.$invalid, 'has-success':ProductForm.txtproduct_name.$valid}">
+                                                        ชื่อพัสดุ :
+                                                        <label class="no-margin">
+                                                            <span class="symbol required">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-group-minism padding-left-5">
+                                                        <input class="form-control input-vsmex greybackground noborder nopadding" id="txtproduct_name" name="txtproduct_name" ng-model="productinfo.product" ng-required="currentStep == 1" placeholder="ระบุชื่อสินค้า" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="width-100">
+                                                    <div ng-class="{'has-error':ProductForm.txtidcatagory.$dirty && ProductForm.txtidcatagory.$invalid, 'has-success':ProductForm.txtidcatagory.$valid}">
+                                                        ประเภท :
+                                                        <label class="no-margin">
+                                                            <span class="symbol required">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select class="cs-select cs-skin-slide-edit no-border no-padding" ng-change="selectedExpensetype(adminproductinfo.idexpense_type,getExpensetype)" ng-model="adminproductinfo.idexpense_type" ng-options="item.idexpense_type as item.expense_type for item in getExpensetype">
+                                                        <option disabled="" value="">
+                                                            {{expenseinfo.expense_type}}
+                                                        </option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="width-100">
+                                                    <div ng-class="{'has-error':ProductForm.txtidcatagorytype.$dirty && ProductForm.txtidcatagorytype.$invalid, 'has-success':ProductForm.txtidcatagorytype.$valid}">
+                                                        ชนิด :
+                                                        <label class="no-margin">
+                                                            <span class="symbol required">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <select class="cs-select cs-skin-elastic-edit no-border no-padding" ng-change="selectedExpensetype(adminproductinfo.idmaterial_type,getMaterialtype)" ng-model="adminproductinfo.idmaterial_type" ng-options="item.idmaterial_type as item.material_type for item in getMaterialtype">
+                                                        <option disabled="" value="">
+                                                            {{adminproductinfo.material_type}}
+                                                        </option>
+                                                    </select>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="media padding-left-10 padding-right-10">
+                                        <div class="pull-left text-extra-large" href="">
+                                            <i class="fa fa-map-marker">
+                                            </i>
+                                        </div>
+                                        <div class="">
+                                            <strong>
+                                                <span class="text-medium">
+                                                    NOTE (หมายเหตุ)
+                                                </span>
+                                            </strong>
+                                            <br>
+                                            <div class="well padding-15 margin-top-15">
+                                                <div class="form-group">
+                                                    <div class="note-editor01">
+                                                        <textarea class="form-control text-small" id="txtproductnote" name="txtproductnote" ng-model="productinfo.product_note" style="overflow:auto;resize:none;" tabindex="16">
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </br>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="row pull-right">
+                                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                            <button class="btn btn-primary btn-md" type="submit">
+                                                <span class="glyphicon glyphicon-save">
+                                                </span>
+                                                Save
+                                            </button>
+                                            <!-- Indicates a successful or positive action -->
+                                            <button class="btn btn-danger btn-md" ng-click="resetproduct()" type="button">
+                                                <span class="glyphicon glyphicon-ban-circle">
+                                                </span>
+                                                Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel-left">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">
+                                        <span class="text-medium badge badge-danger margin-right-10">
+                                            1
+                                        </span>
+                                        <span class="text-medium">
+                                            ขนาดสินค้า (size)
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="width-30p">
+                                        <div ng-class="{'has-error':logbookInsform.txtcollectorcode.$dirty && logbookInsform.txtcollectorcode.$invalid, 'has-success':logbookInsform.txtcollectorcode.$valid} ">
+                                            Code
+                                            <label class="no-margin">
+                                                <span class="symbol required">
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group-minism">
+                                            <div class="col-sm-12">
+                                                <input class="date form-control" disabled="" id="txtcollectorcode" name="txtcollectorcode" ng-model="modelCollectorCode.collectorcode" ng-required="currentStep == 1" placeholder="Select Code" readonly="" type="text" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width-30p">
+                                        Flora Of
+                                    </td>
+                                    <td>
+                                        <div class="form-group-minism">
+                                            <div class="col-sm-12">
+                                                <span class="">
+                                                    {{initflora.country}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div ng-class="{'has-error':logbookInsform.txtdatecollect.$dirty && logbookInsform.txtdatecollect.$invalid, 'has-success':logbookInsform.txtdatecollect.$valid}">
+                                            Date Collect
+                                            <label class="no-margin">
+                                                <span class="symbol required">
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="form-group-minism ">
+                                                    <input class="number4p form-control" disabled="" id="txtdatecollect" name="txtdatecollect" ng-model="logbookData.datecollect" ng-required="currentStep == 1" placeholder="Select Date" readonly="" type="text">
+                                                    </input>
+                                                </div>
+                                                <div class="input-group-addonedit">
+                                                    <a aria-expanded="false" data-toggle="tab" ng-click="showDatePicker()" title="Event">
+                                                        <i class="fa fa-calendar" id="collectdate">
+                                                        </i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">
+                                        <span class="text-medium badge badge-danger margin-right-10">
+                                            2
+                                        </span>
+                                        <span class="text-medium">
+                                            ลักษณะเฉพาะสินค้า (feature)
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="input-group">
+                                            <a class="input-group-addon" ng-click="identaxapopup();">
+                                                <i class="fa fa-caret-down">
+                                                </i>
+                                            </a>
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="autofocus form-control text-input" id="familycollect" name="familycollect" ng-change="changeFamily()" ng-model="keyupfamily" ng-required="currentStep == 1" placeholder="Enter Family Name" tabindex="2" type="text" typeahead-loading="loadingFamily"
+                                                    typeahead-no-results="noResults" uib-typeahead="o as o.family_name for o in FamilyKeyup($viewValue)" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="width-80">
+                                        <span class="label partition-blue">
+                                            Family
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input-group">
+                                            <a class="input-group-addon" ng-click="identaxapopup();">
+                                                <i class="fa fa-caret-down">
+                                                </i>
+                                            </a>
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control text-input" id="genuscollect" name="genuscollect" ng-change="changeGenus()" ng-model="keyupgenus" ng-required="currentStep == 1" placeholder="Enter Genus Name" tabindex="3" type="text" typeahead-loading="loadingGenus" typeahead-no-results="noResults"
+                                                    uib-typeahead="o as o.genus_name for o in GenusKeyup($viewValue)" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="width-80">
+                                        <span class="label partition-orange">
+                                            Genus
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input-group">
+                                            <a class="input-group-addon" ng-click="identaxapopup();">
+                                                <i class="fa fa-caret-down">
+                                                </i>
+                                            </a>
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control text-input" id="speciescollect" name="speciescollect" ng-change="changeSpecies()" ng-model="keyupspecies" ng-required="currentStep == 1" placeholder="Enter Species Name" tabindex="4" type="text" typeahead-loading="loadingSpecies"
+                                                    typeahead-no-results="noResults" typeahead-on-select="onSelectTaxa($item, $model, $label,$event)" uib-typeahead="o as o.sciname for o in SpeciesKeyup($viewValue)" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="width-80">
+                                        <span class="label partition-green">
+                                            Species
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-body no-padding">
+                            <div class="notice notice-danger">
+                                <strong>
+                                    <i>{{logbookData.sciname}}</i>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="panel panel-transparent">
+                            <div class="">
+                                <div class=" ">
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-danger check-esm checkbox-inline">
+                                            <input id="checkbox1" ng-model="logbookData.herbarium" type="checkbox" value="1">
+                                            <label for="checkbox1">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Herbarium
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="checkbox clip-check check-purple check-esm checkbox-inline">
+                                            <input id="checkbox2" ng-model="logbookData.alcohol" type="checkbox" value="1">
+                                            <label for="checkbox2">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Alcohol
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="checkbox clip-check check-success check-esm checkbox-inline">
+                                            <input id="checkbox3" ng-model="logbookData.carpo" type="checkbox" value="1">
+                                            <label for="checkbox3">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Carpo
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-warning check-esm checkbox-inline">
+                                            <input id="checkbox4" ng-model="logbookData.living" type="checkbox" value="1">
+                                            <label for="checkbox4">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Living
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-info check-esm checkbox-inline">
+                                            <input id="checkbox5" ng-model="logbookData.dna" type="checkbox" value="1">
+                                            <label for="checkbox5">
+                                                    <span class="badge badge-default text-very-small">
+                                                        DNA
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-danger check-esm checkbox-inline">
+                                            <input id="checkbox6" ng-model="logbookData.photo" type="checkbox" value="1">
+                                            <label for="checkbox6">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Photo
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">
+                                        <span class="text-medium badge badge-danger margin-right-10">
+                                            2
+                                        </span>
+                                        <span class="text-medium">
+                                            ลักษณะเฉพาะสินค้า (feature)
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="input-group">
+                                            <a class="input-group-addon" ng-click="identaxapopup();">
+                                                <i class="fa fa-caret-down">
+                                                </i>
+                                            </a>
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="autofocus form-control text-input" id="familycollect" name="familycollect" ng-change="changeFamily()" ng-model="keyupfamily" ng-required="currentStep == 1" placeholder="Enter Family Name" tabindex="2" type="text" typeahead-loading="loadingFamily"
+                                                    typeahead-no-results="noResults" uib-typeahead="o as o.family_name for o in FamilyKeyup($viewValue)" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="width-80">
+                                        <span class="label partition-blue">
+                                            Family
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input-group">
+                                            <a class="input-group-addon" ng-click="identaxapopup();">
+                                                <i class="fa fa-caret-down">
+                                                </i>
+                                            </a>
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control text-input" id="genuscollect" name="genuscollect" ng-change="changeGenus()" ng-model="keyupgenus" ng-required="currentStep == 1" placeholder="Enter Genus Name" tabindex="3" type="text" typeahead-loading="loadingGenus" typeahead-no-results="noResults"
+                                                    uib-typeahead="o as o.genus_name for o in GenusKeyup($viewValue)" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="width-80">
+                                        <span class="label partition-orange">
+                                            Genus
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input-group">
+                                            <a class="input-group-addon" ng-click="identaxapopup();">
+                                                <i class="fa fa-caret-down">
+                                                </i>
+                                            </a>
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control text-input" id="speciescollect" name="speciescollect" ng-change="changeSpecies()" ng-model="keyupspecies" ng-required="currentStep == 1" placeholder="Enter Species Name" tabindex="4" type="text" typeahead-loading="loadingSpecies"
+                                                    typeahead-no-results="noResults" typeahead-on-select="onSelectTaxa($item, $model, $label,$event)" uib-typeahead="o as o.sciname for o in SpeciesKeyup($viewValue)" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="width-80">
+                                        <span class="label partition-green">
+                                            Species
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="panel-body no-padding">
+                            <div class="notice notice-danger">
+                                <strong>
+                                    <i>{{logbookData.sciname}}</i>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="panel panel-transparent">
+                            <div class="">
+                                <div class=" ">
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-danger check-esm checkbox-inline">
+                                            <input id="checkbox1" ng-model="logbookData.herbarium" type="checkbox" value="1">
+                                            <label for="checkbox1">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Herbarium
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="checkbox clip-check check-purple check-esm checkbox-inline">
+                                            <input id="checkbox2" ng-model="logbookData.alcohol" type="checkbox" value="1">
+                                            <label for="checkbox2">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Alcohol
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="checkbox clip-check check-success check-esm checkbox-inline">
+                                            <input id="checkbox3" ng-model="logbookData.carpo" type="checkbox" value="1">
+                                            <label for="checkbox3">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Carpo
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-warning check-esm checkbox-inline">
+                                            <input id="checkbox4" ng-model="logbookData.living" type="checkbox" value="1">
+                                            <label for="checkbox4">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Living
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-info check-esm checkbox-inline">
+                                            <input id="checkbox5" ng-model="logbookData.dna" type="checkbox" value="1">
+                                            <label for="checkbox5">
+                                                    <span class="badge badge-default text-very-small">
+                                                        DNA
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox clip-check check-danger check-esm checkbox-inline">
+                                            <input id="checkbox6" ng-model="logbookData.photo" type="checkbox" value="1">
+                                            <label for="checkbox6">
+                                                    <span class="badge badge-default text-very-small">
+                                                        Photo
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel-left">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">
+                                        <span class="text-medium badge badge-danger margin-right-10">
+                                            3
+                                        </span>
+                                        <span class="text-medium">
+                                            หน่วยนับ (unit)
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="width-10p">
+                                        <span class="label card-header-primary vertical-label">
+                                            Lattitude
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <table class="table table-hover no-padding " id="tspecing">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtlat_d.$dirty && logbookInsform.txtlat_d.$invalid, 'has-success':logbookInsform.txtlat_d.$valid} ">
+                                                            Degree
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                    <th class="hidden-xs">
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtlat_m.$dirty && logbookInsform.txtlat_m.$invalid, 'has-success':logbookInsform.txtlat_m.$valid} ">
+                                                            Minute
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtlat_s.$dirty && logbookInsform.txtlat_s.$invalid, 'has-success':logbookInsform.txtlat_s.$valid} ">
+                                                            Second
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="">
+                                                            <div class="input-group">
+                                                                <div class="form-group-minism ">
+                                                                    <input class="autofocus-logbook noborder form-control number3p" id="txtlat_d" name="txtlat_d" ng-keyup="GPSautoLatLong();" ng-model="logbookData.latd" ng-required="currentStep == 1" placeholder="D" tabindex="5" type="text">
+                                                                    </input>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="hidden-xs">
+                                                        <div class="form-group-minism padding-left-5">
+                                                            <input class="number2p form-control noborder " id="txtlat_m" name="txtlat_m" ng-keyup="GPSautoLatLong();" ng-model="logbookData.latm" ng-required="currentStep == 1" placeholder="M" tabindex="6" type="text">
+                                                            </input>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group-minism padding-left-5">
+                                                            <input class="degree form-control noborder" id="txtlat_s" name="txtlat_s" ng-keyup="GPSautoLatLong();" ng-model="logbookData.lats" ng-required="currentStep == 1" placeholder="S" tabindex="7" type="text">
+                                                            </input>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width-10p">
+                                        <span class="label card-header-danger vertical-label">
+                                            Longitude
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <table class="table table-hover no-padding " id="tspecing">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtlong_d.$dirty && logbookInsform.txtlong_d.$invalid, 'has-success':logbookInsform.txtlong_d.$valid} ">
+                                                            Degree
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                    <th class="hidden-xs">
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtlong_m.$dirty && logbookInsform.txtlong_m.$invalid, 'has-success':logbookInsform.txtlong_m.$valid} ">
+                                                            Minute
+                                                            <label class="no-margin ">
+                                                                <span class="symbol required-fix">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtlong_s.$dirty && logbookInsform.txtlong_s.$invalid, 'has-success':logbookInsform.txtlong_s.$valid} ">
+                                                            Second
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group-minism">
+                                                            <input class="number3p noborder form-control " id="txtlong_d" name="txtlong_d" ng-keyup="GPSautoLatLong();" ng-model="logbookData.longd" ng-required="currentStep == 1" placeholder="D" tabindex="8" type="text">
+                                                            </input>
+                                                        </div>
+                                                    </td>
+                                                    <td class="hidden-xs">
+                                                        <div class="form-group-minism padding-left-5">
+                                                            <input class="number2p noborder form-control " id="txtlong_m" name="txtlong_m" ng-keyup="GPSautoLatLong();" ng-model="logbookData.longm" ng-required="currentStep == 1" placeholder="M" tabindex="9" type="text">
+                                                            </input>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group-minism padding-left-5">
+                                                            <input class="degree noborder form-control " id="txtlong_s" name="txtlong_s" ng-keyup="GPSautoLatLong();" ng-model="logbookData.longs" ng-required="currentStep == 1" placeholder="S" tabindex="10" type="text">
+                                                            </input>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width-10p ">
+                                        <span class="label label-info vertical-label">
+                                            Elevation
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <table class="table table-hover no-padding " id="tspecing">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtMASLmin.$dirty && logbookInsform.txtMASLmin.$invalid, 'has-success':logbookInsform.txtMASLmin.$valid} ">
+                                                            MIN
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="" ng-class="{'has-error':logbookInsform.txtMASLmax.$dirty && logbookInsform.txtMASLmax.$invalid, 'has-success':logbookInsform.txtMASLmax.$valid} ">
+                                                            MAX
+                                                            <label class="no-margin">
+                                                                <span class="symbol required">
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group-minism ">
+                                                            <input class="number noborder form-control validate[custom[integer],max[2800]] text-input" id="txtMASLmin" name="txtMASLmin" ng-keyup="MaslKeyup()" ng-model="logbookData.maslmin" ng-required="currentStep == 1" placeholder="Min" tabindex="11" type="text"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group-minism padding-left-5">
+                                                            <input class="number noborder form-control validate[custom[integer],max[2800]] text-input" id="txtMASLmax" name="txtMASLmax" ng-model="logbookData.maslmax" ng-required="currentStep == 1" placeholder="Max" tabindex="12" type="text" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">
+                                        <span class="text-medium badge badge-danger margin-right-10">
+                                            4
+                                        </span>
+                                        <span class="text-medium">
+                                            ตราสินค้า (brand)
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="width-20">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div ng-class="{'has-error':logbookInsform.txtlocality.$dirty && logbookInsform.txtlocality.$invalid, 'has-success':logbookInsform.txtlocality.$valid}">
+                                                    Locality
+                                                    <label class="no-margin">
+                                                        <span class="symbol required">
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group-minism padding-left-5">
+                                            <input class="form-control input-vsmex greybackground noborder nopadding" id="txtlocality" name="txtlocality" ng-model="myModelIPA" ng-required="currentStep == 1" placeholder="Enter IPA site" tabindex="13" type="text" typeahead-loading="loadingIPAsite"
+                                                typeahead-no-results="noResults" typeahead-on-select="onSelectipa($item, $model, $label,$event)" uib-typeahead="o as o.ipa_specific_site_en for o in IPAKeyup($viewValue)" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="width-20">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                Specifiic
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="note-editor01">
+                                                <textarea class="form-control text-small" id="txtslocality" name="txtslocality" ng-model="logbookData.slocality" style="overflow:auto;resize:none;" tabindex="14">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                Habitat
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="note-editor01">
+                                                <textarea class="form-control text-small" id="txthabitat" name="txthabitat" ng-model="logbookData.habitat" style="overflow:auto;resize:none;" tabindex="15">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(6)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div class="panel ">
+                        <div class="row">
+                            <div class="col-md-9 file-upload" style="margin-bottom: 40px">
+                                <h4>
+                                    The queue
+                                </h4>
+                                <p>
+                                    Queue length: {{ uploaderImages.queue.length }}
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">
+                                                    Name
+                                                </th>
+                                                <th ng-show="uploaderImages.isHTML5">
+                                                    Size
+                                                </th>
+                                                <th ng-show="uploaderImages.isHTML5">
+                                                    Progress
+                                                </th>
+                                                <th>
+                                                    Status
+                                                </th>
+                                                <th>
+                                                    Actions
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in uploaderImages.queue">
+                                                <td>
+                                                    <strong>
+                                                        {{ item.file.name }}
+                                                    </strong>
+                                                    <!-- Image preview -->
+                                                    <!--auto height-->
+                                                    <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                                                    <!--auto width-->
+                                                    <div ng-show="uploaderImages.isHTML5" ng-thumb="{ file: item._file, height: 100 }">
+                                                    </div>
+                                                    <!--fixed width and height -->
+                                                    <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                                                </td>
+                                                <td ng-show="uploaderImages.isHTML5" nowrap="">
+                                                    {{ item.file.size/1024/1024|number:2 }} MB
+                                                </td>
+                                                <td ng-show="uploaderImages.isHTML5">
+                                                    <div class="progress progress-xs margin-bottom-0">
+                                                        <div class="progress-bar" ng-style="{ 'width': item.progress + '%' }" role="progressbar">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span ng-show="item.isSuccess">
+                                                        <i class="glyphicon glyphicon-ok">
+                                                        </i>
+                                                    </span>
+                                                    <span ng-show="item.isCancel">
+                                                        <i class="glyphicon glyphicon-ban-circle">
+                                                        </i>
+                                                    </span>
+                                                    <span ng-show="item.isError">
+                                                        <i class="glyphicon glyphicon-remove">
+                                                        </i>
+                                                    </span>
+                                                </td>
+                                                <td nowrap="">
+                                                    <button class="btn btn-primary btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess" type="button">
+                                                        <span class="glyphicon glyphicon-upload">
+                                                        </span>
+                                                        Upload
+                                                    </button>
+                                                    <button class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading" type="button">
+                                                        <span class="glyphicon glyphicon-ban-circle">
+                                                        </span>
+                                                        Cancel
+                                                    </button>
+                                                    <button class="btn btn-danger btn-xs" ng-click="item.remove()" type="button">
+                                                        <span class="glyphicon glyphicon-trash">
+                                                        </span>
+                                                        Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <div>
+                                        Queue progress:
+                                        <div class="progress progress-xs margin-top-5 margin-bottom-20">
+                                            <div class="progress-bar" ng-style="{ 'width': uploaderImages.progress + '%' }" role="progressbar">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-s" ng-click="uploaderImages.uploadAll()" ng-disabled="!uploaderImages.getNotUploadedItems().length" type="button">
+                                        <span class="glyphicon glyphicon-upload">
+                                        </span>
+                                        Upload all
+                                    </button>
+                                    <button class="btn btn-primary btn-o btn-s" ng-click="uploaderImages.cancelAll()" ng-disabled="!uploaderImages.isUploading" type="button">
+                                        <span class="glyphicon glyphicon-ban-circle">
+                                        </span>
+                                        Cancel all
+                                    </button>
+                                    <button class="btn btn-primary btn-o btn-s" ng-click="uploaderImages.clearQueue()" ng-disabled="!uploaderImages.queue.length" type="button">
+                                        <span class="glyphicon glyphicon-trash">
+                                        </span>
+                                        Remove all
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>
+                                    Select files
+                                </h5>
+                                <div class="panel panel-white">
+                                    <div class="panel-body">
+                                        <div ng-show="uploaderImages.isHTML5">
+                                            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                                            <div class="well my-drop-zone" nv-file-over="" uploader="uploaderImages">
+                                                Base drop zone
+                                            </div>
+                                            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                                            <div nv-file-drop="" options="{ url: '/foo' }" uploader="uploaderImages">
+                                                <div class="well my-drop-zone" nv-file-over="" over-class="another-file-over-class" uploader="uploaderImages">
+                                                    Another drop zone with its own settings
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                                        <span class="btn btn-primary btn-o btn-file">
+                                            Select an image file
+                                            <input multiple="" nv-file-select="" type="file"
+                                                uploader="uploaderImages" />
+                                        </span>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(2)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div id="sizetab">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr class="uppercase panel-coral ">
+                                    <th colspan="4">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title text-white">
+                                                Product
+                                                <span class="text-bold">
+                                                    Size
+                                                </span> (ขนาดมาตรฐานสินค้า)
+                                                <span class="badge badge-inverse">
+                                                    <i class="fa fa-plus">
+                                                    </i>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a class="btn btn-xs btn-transparent" ng-click="addSize();">
+                                            <i class="fa fa-arrow-circle-down">
+                                            </i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <input class="form-control input-vsmex greybackground noborder nopadding" id="p_size" name="p_size" ng-model="myModelSizelist" placeholder="Enter Size" tabindex="19" type="text" typeahead-loading="loadingSize" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                            uib-typeahead="o as o.size for o in SizeKeyup($viewValue)" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-stylish" id="sample-table-2">
+                            <thead>
+                                <tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="size in sizes">
+                                    <td class="width-50 center">
+                                        <span class="badge badge-info">
+                                            {{size.sizeseq}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{size.size}}
+                                    </td>
+                                    <td class="width-100 center">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                            <a class="btn btn-transparent btn-xs tooltips" href="#" ng-click="removeSize(size.idproduct_size)" tooltip-placement="top" uib-tooltip="Remove">
+                                                <i class="fa fa-times fa fa-white">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                            <div class="btn-group" uib-dropdown="">
+                                                <button class="btn btn-primary btn-o btn-sm dropdown-toggle" type="button" uib-dropdown-toggle="">
+                                                    <i class="fa fa-cog">
+                                                    </i>
+                                                    <span class="caret">
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right dropdown-light" role="menu">
+                                                    <li>
+                                                        <a href="#" ng-click="removeSize(size.idproduct_size)">
+                                                            Remove
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(3)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div id="featuretab">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr class="uppercase panel-coral ">
+                                    <th colspan="4">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title text-white">
+                                                Product
+                                                <span class="text-bold">
+                                                    Feature
+                                                </span> (คุณลักษณะเฉพาะ)
+                                                <span class="badge badge-inverse">
+                                                    <i class="fa fa-plus">
+                                                    </i>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a class="btn btn-xs btn-transparent" ng-click="addFeature();">
+                                            <i class="fa fa-arrow-circle-down">
+                                            </i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <input class="form-control input-vsmex greybackground noborder nopadding" id="p_feature" name="p_feature" ng-model="myModelFeaturelist" placeholder="Enter Feature" tabindex="19" type="text" typeahead-loading="loadingFeature" typeahead-no-results="noResults"
+                                            typeahead-on-select="onSelect($item, $model, $label,$event)" uib-typeahead="o as o.feature for o in FeatureKeyup($viewValue)" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-stylish" id="sample-table-2">
+                            <thead>
+                                <tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="feature in features">
+                                    <td>
+                                        <span class="badge badge-info">
+                                            {{feature.featureseq}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{feature.feature}}
+                                    </td>
+                                    <td class="center">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                            <a class="btn btn-transparent btn-xs tooltips" href="#" ng-click="removeFeature(feature.idproduct_feature)" tooltip-placement="top" uib-tooltip="Remove">
+                                                <i class="fa fa-times fa fa-white">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                            <div class="btn-group" uib-dropdown="">
+                                                <button class="btn btn-primary btn-o btn-sm dropdown-toggle" type="button" uib-dropdown-toggle="">
+                                                    <i class="fa fa-cog">
+                                                    </i>
+                                                    <span class="caret">
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right dropdown-light" role="menu">
+                                                    <li>
+                                                        <a href="#" ng-click="removeFeature(feature.idproduct_feature)">
+                                                            Remove
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(4)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div id="unittab">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr class="uppercase panel-coral ">
+                                    <th colspan="5">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title text-white">
+                                                Product
+                                                <span class="text-bold">
+                                                    Unit
+                                                </span> (หน่วยนับ)
+                                                <span class="badge badge-inverse">
+                                                    <i class="fa fa-plus">
+                                                    </i>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a class="btn btn-xs btn-transparent" ng-click="addUnit();">
+                                            <i class="fa fa-arrow-circle-down">
+                                            </i>
+                                        </a>
+                                    </td>
+                                    <td colspan="4">
+                                        <div id="focusguard-1">
+                                        </div>
+                                        <input class="autofocus form-control input-vsmex greybackground noborder nopadding" id="p_unit" name="p_unit" ng-model="myModelUnitlist" placeholder="Enter Unit" tabindex="1" type="text" typeahead-loading="loadingUnit" typeahead-no-results="noResults"
+                                            typeahead-on-select="onSelect($item, $model, $label,$event)" uib-typeahead="o as o.unit for o in UnitKeyup($viewValue)" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-stylish" id="sample-table-2">
+                            <thead>
+                                <tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="unit in units">
+                                    <td class="width-50 center">
+                                        <span class="badge badge-info">
+                                            {{unit.unitseq}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            {{unit.unit}}
+                                        </strong>
+                                    </td>
+                                    <td class="width-50 center">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                            <a class="btn btn-transparent btn-xs tooltips" href="#" ng-click="removeUnit(unit.idproduct_unit)" tooltip-placement="top" uib-tooltip="Remove">
+                                                <i class="fa fa-times fa fa-white">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                            <div class="btn-group" uib-dropdown="">
+                                                <button class="btn btn-primary btn-o btn-sm dropdown-toggle" type="button" uib-dropdown-toggle="">
+                                                    <i class="fa fa-cog">
+                                                    </i>
+                                                    <span class="caret">
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right dropdown-light" role="menu">
+                                                    <li>
+                                                        <a href="#" ng-click="removeUnit(unit.idproduct_unit)">
+                                                            Remove
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(5)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div id="suppliertab">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr class="uppercase panel-coral ">
+                                    <th colspan="4">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title text-white">
+                                                Product
+                                                <span class="text-bold">
+                                                    Vendor
+                                                </span> (ผู้จำหน่าย)
+                                                <span class="badge badge-inverse">
+                                                    <i class="fa fa-plus">
+                                                    </i>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a class="btn btn-xs btn-transparent" ng-click="addSupplier();">
+                                            <i class="fa fa-arrow-circle-down">
+                                            </i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <input class="form-control input-vsmex greybackground noborder nopadding" id="p_supplier" name="p_supplier" ng-model="myModelSupplierlist" placeholder="Enter Supplier" tabindex="19" type="text" typeahead-loading="loadingSupplier" typeahead-no-results="noResults"
+                                            typeahead-on-select="onSelect($item, $model, $label,$event)" uib-typeahead="o as o.supplier for o in SupplierKeyup($viewValue)" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-stylish" id="sample-table-2">
+                            <thead>
+                                <tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="supplier in suppliers">
+                                    <td class="width-50 center">
+                                        <span class="badge badge-info">
+                                            {{supplier.supplierseq}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{supplier.supplier}}
+                                    </td>
+                                    <td class="width-100 center">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                            <a class="btn btn-transparent btn-xs tooltips" href="#" ng-click="removeSupplier(supplier.idproduct_supplier)" tooltip-placement="top" uib-tooltip="Remove">
+                                                <i class="fa fa-times fa fa-white">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                            <div class="btn-group" uib-dropdown="">
+                                                <button class="btn btn-primary btn-o btn-sm dropdown-toggle" type="button" uib-dropdown-toggle="">
+                                                    <i class="fa fa-cog">
+                                                    </i>
+                                                    <span class="caret">
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right dropdown-light" role="menu">
+                                                    <li>
+                                                        <a href="#" ng-click="removeSupplier(supplier.idproduct_supplier)">
+                                                            Remove
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animate-show-hide " ng-show="isSet2(7)">
+            <div class="ppanel-middle-120 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="col-md-12">
+                    <div id="brandtab">
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr class="uppercase panel-coral ">
+                                    <th colspan="4">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title text-white">
+                                                Product
+                                                <span class="text-bold">
+                                                    Brand
+                                                </span> (ตราสินค้า)
+                                                <span class="badge badge-inverse">
+                                                    <i class="fa fa-plus">
+                                                    </i>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a class="btn btn-xs btn-transparent" ng-click="addBrand();">
+                                            <i class="fa fa-arrow-circle-down">
+                                            </i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <input class="form-control input-vsmex greybackground noborder nopadding" id="p_brand" name="p_brand" ng-model="myModelBrandlist" placeholder="Enter Brand" tabindex="19" type="text" typeahead-loading="loadingBrandt" typeahead-no-results="noResults" typeahead-on-select="onSelect($item, $model, $label,$event)"
+                                            uib-typeahead="o as o.brand for o in BrandKeyup($viewValue)" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-stylish" id="sample-table-2">
+                            <thead>
+                                <tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="brand in brands">
+                                    <td class="width-50 center">
+                                        <span class="badge badge-info">
+                                            {{brand.brandseq}}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{brand.brand}}
+                                    </td>
+                                    <td class="width-100 center">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                            <a class="btn btn-transparent btn-xs tooltips" href="#" ng-click="removeBrand(brand.idproduct_brand)" tooltip-placement="top" uib-tooltip="Remove">
+                                                <i class="fa fa-times fa fa-white">
+                                                </i>
+                                            </a>
+                                        </div>
+                                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                            <div class="btn-group" uib-dropdown="">
+                                                <button class="btn btn-primary btn-o btn-sm dropdown-toggle" type="button" uib-dropdown-toggle="">
+                                                    <i class="fa fa-cog">
+                                                    </i>
+                                                    <span class="caret">
+                                                    </span>
+                                                </button>
+                                                <ul class="dropdown-menu pull-right dropdown-light" role="menu">
+                                                    <li>
+                                                        <a href="#" ng-click="removeBrand(brand.idproduct_brand)">
+                                                            Remove
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,176 @@
+<div ng-controller="ProjectDetailsRightCtrl">
+    <div class="container-fluid fadeIn wow" data-wow-delay="0.5s">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-white no-radius no-border">
+                            <div class="panel-body">
+                                <div class="margin-top-5">
+                                    <div class="media padding-left-10 padding-right-10">
+                                        <a class="pull-left" href="#">
+                                            <h5 class="text-bold text-extra-small text-dark-transparent text-uppercase">
+                                                Prjects <i class="fa fa-arrow-circle-o-right"></i></h5>
+                                            <letter-icon data="Project" color="auto" box="round" size="lg"
+                                                class="margin-right-5"></letter-icon>
+
+                                        </a>
+                                        <div class="media-body ">
+                                            <div class="panel-footer">
+                                                <h3 class="over-title margin-bottom-5">
+                                                    {{projectinfo.project}}
+                                                    <span class="text-bold">
+                                                    </span>
+                                                </h3>
+                                                <p class="no-margin">
+                                                    <a href="#">
+                                                        <i class="fa fa-anchor text-green">
+                                                        </i>
+                                                    </a>
+                                                    <span class="text-light margin-left-10">
+                                                        {{projectinfo.section}}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="panel-body">
+                                        
+                                            
+                                        <div class="panel panel-white" id="activities">
+                                            <div class="panel-primary">
+                                                <div class="panel-heading border-light">
+                                                    <div class="">
+                                                        <div class="clearfix padding-5 space5">
+                                                            <div class="col-xs-6 text-center no-padding">
+                                                                <div class="border-right border-light">
+                                                                    <span class="text-bold block text-extra-large">
+                                                                        <h4 class="panel-title">
+                                                                            งบดำเนินการ
+                                                                        </h4>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 text-center no-padding">
+                                                                <div class="border-light">
+                                                                    <span class="text-bold block text-extra-large">
+                                                                        <h4 class="panel-title">
+                                                                            {{projectinfo.budget}}
+                                                                            <a class=""
+                                                                                ng-click="openBudget('right',budgetlist,projectinfo)">
+                                                                                <i class="fa fa-edit">
+                                                                                </i>
+                                                                            </a>
+                                                                        </h4>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-wrapper">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-lg-12">
+                                                            <div class="panel-body">
+                                                                <table class="noborder" width="100%">
+                                                                    <thead>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr ng-repeat-start="budgetlist in projectinfo.budgetlist"
+                                                                            class="budgetlist.idproject_details">
+
+                                                                            <td>
+                                                                                <div class="inline-block">
+                                                                                    <span
+                                                                                        class="label label-info text-extra-large">
+                                                                                        {{budgetlist.budget_type}}
+                                                                                    </span>
+                                                                                    <a class="btn"
+                                                                                        ng-click="openBudget('right',budgetlist,projectinfo)">
+                                                                                        <i class="fa fa-plus">
+                                                                                        </i>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <table
+                                                                                    class="table table-bordered table-hover"
+                                                                                    id="sample-table-5">
+                                                                                    <tbody>
+                                                                                        <tr
+                                                                                            ng-repeat-start="exlist in budgetlist.expenselist">
+                                                                                            <td>
+                                                                                                <a
+                                                                                                    ng-click="openExpenseDetails('right',exlist.idproject_details)">
+                                                                                                    {{exlist.expense_type}}
+                                                                                                    <span
+                                                                                                        class="badge badge-info"><i
+                                                                                                            class="fa fa-info"></i></span>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                            <td class="hidden-xs"
+                                                                                                width="200px">
+                                                                                                {{exlist.expense_cost}}
+                                                                                            </td>
+
+                                                                                            <td class="hidden-xs"
+                                                                                                width="10px">
+                                                                                                <span
+                                                                                                    class="label label-sm label-success">
+                                                                                                    P
+                                                                                                </span>
+
+                                                                                            </td>
+                                                                                            <td class="hidden-xs"
+                                                                                                width="10px">
+                                                                                                <a
+                                                                                                    ng-click="edit_ex(exlist.idproject_details)">
+                                                                                                    <span
+                                                                                                        class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-edit"></i>
+
+                                                                                                    </span>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                            <td class="hidden-xs"
+                                                                                                width="10px">
+                                                                                                <a
+                                                                                                    ng-click="remove_ex(exlist.idproject_details,exlist.idbudget_type)">
+                                                                                                    <span
+                                                                                                        class="label label-sm label-danger">
+                                                                                                        <i
+                                                                                                            class="fa fa-trash"></i>
+
+                                                                                                    </span>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr ng-repeat-end="">
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr ng-repeat-end="">
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

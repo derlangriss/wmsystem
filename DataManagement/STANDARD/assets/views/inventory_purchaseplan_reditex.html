@@ -1,0 +1,163 @@
+<div ng-controller="PurchasePlanRightEditCtrl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-white no-radius no-border">
+                            <div class="panel-body">
+                                <div class="margin-top-5">
+                                    <div class="media padding-left-10 padding-right-10">
+                                        <a class="pull-left" href="#">
+                                            <img alt="image" class="img-circle" src="assets/images/avatar-2.jpg">
+                                            </img>
+                                        </a>
+                                        <div class="media-body ">
+                                            <div class="panel-footer">
+
+                                                <p class="no-margin">
+                                                <div class="row">
+                                                    <div class="col-xs-3 text-center">
+                                                        <h3 class="over-title margin-bottom-5">
+                                                            {{purchaseexpectinfo.expense_type}}
+
+                                                        </h3>
+                                                    </div>
+                                                    <div class="col-xs-3 text-center">
+                                                        <div class="rate">
+                                                            <span
+                                                                class="value">{{purchaseexpectinfo.expense_cost}}</span>
+                                                            <span class="percentage">%</span>
+                                                        </div><small class="text-muted">งบประมาณที่ได้รับ</small>
+                                                    </div>
+                                                    <div class="col-xs-3 text-center">
+                                                        <div class="rate">
+                                                            <span
+                                                                class="value">{{purchaseexpectinfo.includeexpect}}</span>
+                                                            <span class="percentage">%</span>
+                                                        </div><small class="text-muted">งบประมาณที่ใช้ไป</small>
+                                                    </div>
+                                                    <div class="col-xs-3 text-center">
+                                                        <div class="rate">
+                                                            <span
+                                                                class="value">{{purchaseexpectinfo.balancecost}}</span>
+                                                            <span class="percentage">%</span>
+                                                        </div><small class="text-muted">งบประมาณที่คงเหลือ</small>
+                                                    </div>
+                                                </div>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <table cellspacing="0" class="table table-condensed table-hover"
+                                        id="PurchasePlanListTbl" width="100%">
+                                        <thead>
+                                            <tr class="uppercase label-default ">
+
+                                                <th>
+                                                    <span class="label-change ">
+                                                        #
+                                                    </span>
+                                                </th>
+                                                <th class="center">
+                                                    <span class="label-change ">
+                                                        ลำดับ
+                                                    </span>
+                                                </th>
+                                                <th class="left">
+                                                    <span class="label-change pull-left">
+                                                        ช่วงเวลาที่ต้องการจัดซื้อ
+                                                    </span>
+                                                </th>
+                                                <th class="center">
+                                                    <span class="label-change pull-left">
+                                                        mix month
+                                                    </span>
+                                                </th>
+                                                <th class="center">
+                                                    <span class="label-change pull-left">
+                                                        งบประมาณ
+                                                    </span>
+                                                </th>
+                                                <th class="center">
+                                                    <span class="label-change pull-left">
+                                                        idproject_details_expect
+                                                    </span>
+                                                </th>
+                                                <th class="center">
+                                                    <span class="label-change pull-left">
+                                                        idproject_details
+                                                    </span>
+                                                </th>
+                                                <th class="center">
+                                                    <span class="label-change pull-left">
+                                                        #
+                                                    </span>
+                                                </th>
+                                        </thead>
+                                    </table>
+                                    <!--table class="table table-hover" id="sample-table-1">
+                                        <thead>
+                                            <tr>
+                                                <th class="center">#</th>
+                                                <th>ช่วงเวลาที่ต้องการจัดซื้อ</th>
+                                                <th class="hidden-xs">จำนวนเงิน</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center">1</td>
+                                                <td class="hidden-xs">เม.ย. 63</td>
+                                                <td>24820</td>
+                                                <td class="center">
+                                                    <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                                        <a href="#" class="btn btn-transparent btn-xs"
+                                                            tooltip-placement="top" uib-tooltip="Edit"><i
+                                                                class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-transparent btn-xs tooltips"
+                                                            tooltip-placement="top" uib-tooltip="Share"><i
+                                                                class="fa fa-share"></i></a>
+                                                        <a href="#" class="btn btn-transparent btn-xs tooltips"
+                                                            tooltip-placement="top" uib-tooltip="Remove"><i
+                                                                class="fa fa-times fa fa-white"></i></a>
+                                                    </div>
+                                                    <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                                        <div class="btn-group" uib-dropdown>
+                                                            <button type="button"
+                                                                class="btn btn-primary btn-o btn-sm dropdown-toggle"
+                                                                uib-dropdown-toggle>
+                                                                <i class="fa fa-cog"></i>&nbsp;<span
+                                                                    class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu pull-right dropdown-light"
+                                                                role="menu">
+                                                                <li>
+                                                                    <a href="#"> Edit </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#"> Share </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#"> Remove </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+<div page-loader="">
+</div>
+<div class="pc-innerview fadeIn wow" data-wow-delay="0.5s ">
+    <div class="col pc-options">
+        <div class="pc-options-pcontainer scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div class="panel-body">
+                <div class="partition-grey padding-15 text-center margin-bottom-25">
+                    <h4 class="pcustom ">ปรับปรุงหน่วยนับสินค้า</h4>
+                </div>
+                <table class="table table-hover no-padding " id="tspecing">
+                    <tbody>
+                        <tr>
+                            <td class="no-bg no-border" rowspan="7">
+                                <div class="row">
+                                    <span class="label card-header-green vertical-label no-padding">
+                                        --------------- Product Unit Edit Form ---------------
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                ชื่อพัสดุ :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <input class="form-control input-vsmex greybackground noborder nopadding" id="unit" name="unit" ng-model="adminpcunit.unit" ng-required="currentStep == 1" placeholder="หน่วยนับ" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                คำอธิบาย :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group-minism padding-left-5">
+                                    <input class="form-control input-vsmex greybackground noborder nopadding" id="unit_desc" name="unit_desc" ng-model="adminpcunit.unit_desc" ng-required="currentStep == 1" placeholder="คำอธิบาย" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+                                หมายเหตุ :
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="form-group">
+                                    <div class="note-editor01">
+                                        <textarea class="form-control text-small" id="unit_note" name="unit_note" ng-model="adminpcunit.unit_note" style="overflow:auto;resize:none;" tabindex="16">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="width-100">
+
+                            </td>
+                            <td class="hidden-xs">
+                                <div class="pull-right">
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <button class="btn btn-primary btn-md" ng-click="ManagePCunit(adminpcunit)">
+                                        <span class="glyphicon glyphicon-save">
+                                        </span>
+                                        Save
+                                    </button>
+                                    <!-- Indicates a successful or positive action -->
+                                    <button class="btn btn-danger btn-md" ng-click="resetproduct()" type="button">
+                                        <span class="glyphicon glyphicon-ban-circle">
+                                        </span>
+                                        Reset
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="pp-reader">
+        <div class="pc-innerview2 scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover no-padding" id="AdminPCunitTbl" width="100%">
+                        <thead>
+                            <tr class="uppercase label-default ">
+                                <th>
+                                    <span class="text-white ">
+                                        #
+                                    </span>
+                                </th>
+                                <th class="center">
+                                    <span class="text-white ">
+                                        id
+                                    </span>
+                                </th>
+                                <th class="center">
+                                    <span class="text-white ">
+                                        ขนาดมาตรฐานสินค้า
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="text-white ">
+                                        คำอธิบาย
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="text-white ">
+                                        หมายเหตุ
+                                    </span>
+                                </th>
+                                <th>
+                                    <span class="text-white ">
+                                        #
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

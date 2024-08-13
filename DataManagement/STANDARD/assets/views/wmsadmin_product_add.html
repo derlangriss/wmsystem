@@ -1,0 +1,180 @@
+<div class="panel-body">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="Top bg-danger"></div>
+                <div class="pull-left Cells Tabselected label-danger">
+                    {{adminproductinfo.product}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pp-innerview">
+    <div class="col p-options">
+        <div class="p-options-pcontainer scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="center">
+                        <div flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-file-success="uploader.controllerFn($flow, $file, $message)" flow-init="{singleFile:true}" flow-name="obj.flow" flow-object="obj.flow">
+                            <div class="center">
+                                <div class="product-images">
+                                    <div class="thumbnail-product">
+                                        <img alt="" ng-if="!obj.flow.files.length && noImage" ng-src="assets/images/product/{{adminproductinfo.p_image}}">
+                                        <img alt="" ng-if="!obj.flow.files.length && !noImage" ng-src="assets/images/product/NA.jpg">
+                                        <img flow-img="obj.flow.files[0]" ng-if="obj.flow.files.length">
+                                        </img>
+                                        </img>
+                                        </img>
+                                    </div>
+                                    <div class="product-image-buttons" ng-if="obj.flow.files.length">
+                                        <span class="label btn btn-danger" ng-click="obj.flow.cancel()">
+                                            <i class="fa fa-times">
+                                            </i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-lg-12">
+                                    <div class="panel panel-transparent ">
+                                        <div class="space12 ">
+                                            <div class="btn-group">
+                                                You can drop image file below (.jpg .png only)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12">
+                                        <div class="panel panel-transparent ">
+                                            <div class="">
+                                                <div class="btn-group">
+                                                    <span class="btn btn-uploadproduct btn-transparent btn-file">
+                                                        <i class="fa fa-cloud-upload"></i>
+                                                        <input flow-btn="" type="file" />
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-reader">
+        <div class="productmenu-panel-body">
+            <div class="tabs tabs-style-bar">
+                <nav>
+                    <ul>
+                        <li ng-class="{'tab-current' : isSet2(1)}" ng-click="setTab2(1)"><a class="icon icon-config"><span>info</span></a></li>
+                        <li><a class="icon icon-home "><span>Size</span></a></li>
+                        <li><a class="icon icon-gift"><span>Feature</span></a></li>
+                        <li><a class="icon icon-upload"><span>Brand</span></a></li>
+                        <li><a class="icon icon-coffee"><span>Unit</span></a></li>
+                        <li><a class="icon icon-config"><span>Vendor</span></a></li>
+                        <li><a class="icon icon-config"><span>images</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="pp-innerview2">
+            <div class="pp-reader-inner scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div class="animate-show-hide " ng-show="isSet2(1)">
+                    <div class="panel panel-gradian-grey no-radius no-border">
+                        <div class="col-lg-12">
+                            <table class="table table-hover no-padding " id="tspecing">
+                                <thead>
+                                    <tr class="label-info">
+                                        <th colspan="2">
+                                            <span class="label uppercase">
+                                                General Information (รายละเอียดทั่วไป)
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="width-200">
+                                            ชื่อสินค้า :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control input-vsmex greybackground noborder nopadding" id="txtproduct_name" name="txtproduct_name" ng-model="adminproductinfo.product" ng-required="currentStep == 1" placeholder="ระบุชื่อสินค้า" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100">
+                                            กลุ่มสินค้า :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control input-vsmex greybackground noborder nopadding ptype" id="pgroup" name="pgroup" ng-model="myModelpgrouplist" placeholder="ระบุกลุ่มสินค้า" tabindex="19" type="text" typeahead-loading="loadingPgroup" typeahead-no-results="noResults"
+                                                    typeahead-on-select="onSelect($item, $model, $label,$event)" uib-typeahead="o as o.ptype for o in PgroupKeyup($viewValue)" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100" rowspan="2">
+                                            การจำแนกประเภทวัสดุ <br> (ตามหลักกรมบัญชีกลาง):
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control input-vsmex greybackground noborder nopadding ptype" id="texpense_type" name="texpense_type" ng-model="myModelpgrouplist.expense_type" readonly>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td class="hidden-xs">
+                                            <div class="form-group-minism padding-left-5">
+                                                <input class="form-control input-vsmex greybackground noborder nopadding ptype" id="tmaterial_type" name="tmaterial_type" ng-model="myModelpgrouplist.material_type" readonly>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100">
+                                            หมายเหตุ :
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="form-group">
+                                                <div class="note-editor01">
+                                                    <textarea class="form-control text-small" id="txtproductnote" name="txtproductnote" ng-model="adminproductinfo.product_note" style="overflow:auto;resize:none;" tabindex="16">
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="width-100">
+
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="pull-right">
+                                                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                                <button class="btn btn-primary btn-md" ng-click="addProduct(adminproductinfo)">
+                                                    <span class="glyphicon glyphicon-save">
+                                                    </span> Save
+                                                </button>
+                                                <!-- Indicates a successful or positive action -->
+                                                <button class="btn btn-danger btn-md" ng-click="resetproduct()" type="button">
+                                                    <span class="glyphicon glyphicon-ban-circle">
+                                                    </span>
+                                                    Reset
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<!-- start: MESSAGES -->
+<div ct-fullheight="" data-ct-fullheight-exclusion="header, footer">
+    <!-- /// controller:  'InboxCtrl' -  localtion: assets/js/controllers/inboxCtrl.js /// -->
+    <div active-class="message-open" class="application" id="application" toggleable ng-controller="InventoryAdminMainCtrl">
+        <!-- start: EMAIL OPTIONS -->
+        <div class="col main-panel ">
+            <div class="panel-azure mainwrap-list">
+                <div ui-view="firstview" class="fade-in">
+                </div>
+            </div>
+        </div>
+        <!-- end: EMAIL OPTIONS -->
+
+        <!-- start: EMAIL READER -->
+        <div class="main-view">
+            <div class="submain-view scrollbar-macosx" data-jquery-scrollbar="jqueryScrollbarOptions">
+                <div ui-view="secondview" class="fade-in">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<!-- start: MAIN NAVIGATION MENU -->
+<div class="navbar-title">
+    <span class="title" translate="sidebar.heading.NAVIGATION">
+        การจัดการข้อมูล
+    </span>
+</div>
+<ul class="main-navigation-menu">
+    <li ui-sref-active="active">
+        <a ui-sref="app.dashboard">
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="fa fa-home">
+                    </i>
+                </div>
+                <div class="item-inner">
+                    <span class="title">
+                        Dashboard
+                    </span>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li ng-class="{'active open':$state.includes('app.inventory')}">
+        <a href="javascript:void(0)">
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="fa fa-book">
+                    </i>
+                </div>
+                <div class="item-inner">
+                    <span class="title" translate="sidebar.nav.inventory.MAIN">
+                        งานพัสดุ
+                    </span>
+                    <i class="icon-arrow">
+                    </i>
+                </div>
+            </div>
+        </a>
+        <ul class="sub-menu first">
+            <li ui-sref-active="active">
+                <a ui-sref="app.inventory.inapps.dashboard({ fiscalyear:2021 ,idsection:1 })">
+                    <span class="title" translate="sidebar.nav.inventory.BUDGETPLAN">
+                        การจัดการงบประมาณ
+                    </span>
+                </a>
+            </li>
+            <!--li ui-sref-active="active">
+                <a ui-sref="app.inventory.inapps.dashboard({ fiscalyear:app.fiscalyear ,idsection:idsection })">
+                    <span class="title" translate="sidebar.nav.inventory.BUDGETPLAN">
+                        การจัดการงบประมาณ
+                    </span>
+                </a>
+            </li-->
+            <li ui-sref-active="active">
+                <a ui-sref="app.inventory.pp">
+                    <span class="title" translate="sidebar.nav.inventory.PURCHASEPLAN">
+                        การวางแผนการจัดซื้อวัสดุ
+                    </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.inventory.stocks">
+                    <span class="title" translate="sidebar.nav.inventory.PURCHASEORDER">
+                        การจัดซื้อวัสดุ
+                    </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.inventory.invenAssign">
+                    <span class="title" translate="sidebar.nav.inventory.STOCKS">
+                        การเบิกจ่ายวัสดุ
+                    </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.inventory.stocks">
+                    <span class="title" translate="sidebar.nav.inventory.MATERIALREPORT">
+                        รายงานวัสดุคงเหลือ
+                    </span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.wmsadmin.product.pmanage.pall">
+                    <span class="title" translate="">
+                        ลองพิเศษ
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

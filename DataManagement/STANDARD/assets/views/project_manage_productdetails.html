@@ -1,0 +1,187 @@
+<!-- start: FIRST SECTION -->
+<div page-loader="">
+    <div class="rect1">
+    </div>
+    <div class="rect2">
+    </div>
+    <div class="rect3">
+    </div>
+    <div class="rect4">
+    </div>
+    <div class="rect5">
+    </div>
+</div>
+<div class="fadeIn wow" data-wow-delay="1.1s">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="demoslide">
+                                <div class="item">
+                                    <div class="clearfix" style="max-width:100%;">
+                                        <ul id="image-gallery">
+                                            <li class="itemproduct" data-thumb="{{d.image_name}}" lightgallery ng-repeat="d in p_details.imageall">
+                                                <img ng-src="{{d.image_name}}" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details col-md-6">
+                            <h3 class="product-title">
+                                {{p_details.product}}
+                            </h3>
+                            <div class="rating">
+                                <div class="stars">
+                                    <span class="fa fa-star checked">
+                                    </span>
+                                    <span class="fa fa-star checked">
+                                    </span>
+                                    <span class="fa fa-star checked">
+                                    </span>
+                                    <span class="fa fa-star checked">
+                                    </span>
+                                    <span class="fa fa-star checked">
+                                    </span>
+                                </div>
+                                <span class="review-no">
+                                    {{p_details.catagory}} ( {{p_details.supplies_type}} )
+                                </span>
+                            </div>
+                            <p class="vote">
+                            </p>
+                            <h4 class="price">
+                                current price:
+                                <span>
+                                    $180
+                                </span>
+                            </h4>
+                            <p class="vote">
+                                <strong>
+                                    ขนาดมาตรฐานสินค้า
+                                </strong>
+                            </p>
+                            <h5 class="sizes ">
+                                sizes:
+                                <nav class="links cl-effect-2" id="cl-effect-2">
+                                    <a ng-class="{'cleff2select': changestyle3(d.idproduct_size)}" ng-repeat="d in p_details.size">
+                                        <span data-hover="{{d.size}}" ng-click="getidsize(d.idproduct_size)">
+                                            {{d.size}}
+                                        </span>
+                                    </a>
+                                </nav>
+                            </h5>
+                            <p class="vote">
+                                <strong>
+                                    คุณลักษณะเฉพาะ
+                                </strong>
+                            </p>
+                            <h5 class="sizes ">
+                                sizes:
+                                <nav class="links cl-effect-1" id="cl-effect-1">
+                                    <a ng-class="{'cleff1select': changestyle1(d.idfeature)}" ng-repeat="d in p_details.feature">
+                                        <span class="label label-grey" data-hover="{{d.feature}}" ng-click="getidfeature(d.idfeature)">
+                                            {{d.feature}}
+                                        </span>
+                                    </a>
+                                </nav>
+                            </h5>
+                            <p class="vote">
+                                <strong>
+                                    หน่วยนับ
+                                </strong>
+                            </p>
+                            <h5 class="sizes ">
+                                Unit:
+                                <nav class="links cl-effect-1" id="cl-effect-1">
+                                    <a ng-class="{'cleff1select': changestyle2(d.idunit)}" ng-repeat="d in p_details.unit">
+                                        <span class="label label-grey" data-hover="{{d.unit}}" ng-click="getidunit(d.idunit)">
+                                            {{d.unit}}
+                                        </span>
+                                    </a>
+                                </nav>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <table class="table table-bordered table-hover no-padding" id="ProductCompoundTbl" width="100%">
+                    <thead>
+                        <tr class="uppercase label-info ">
+                            <th>
+                                <span class="label-change ">
+                                    #
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    idproduct
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    รายการ
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    ขนาด
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    คุณลักษณะเฉพาะ
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    ยี่ห้อ
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    หน่วย
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    ร้านค้า
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    ราคาต่อหน่วย
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    idbrand
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    idunit
+                                </span>
+                            </th>
+                            <th>
+                                <span class="label-change ">
+                                    idsupplier
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

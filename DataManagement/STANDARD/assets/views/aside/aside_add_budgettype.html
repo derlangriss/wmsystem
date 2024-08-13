@@ -1,0 +1,142 @@
+<div class="panel-heading partition-azure border-light no-radius">
+    <h4 class="mainTitle no-margin text-white">
+        เพิ่มรายการหมวด
+        <span class="text-bold">
+            งบดำเนินการ
+        </span>
+    </h4>
+</div>
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row space20">
+                            <div class="panel-body">
+                                <!-- end: EMAIL READER -->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="panel panel-white no-radius no-border">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="panel no-radius">
+                                                            <h5 class="text-bold text-extra-small text-dark-transparent text-uppercase">
+                                                                งบประมาณคงเหลือ
+                                                                <i class="fa fa-arrow-circle-o-right">
+                                                                </i>
+                                                            </h5>
+                                                            <div class="block text-dark text-left">
+                                                                <span class="counter text-azure text-bold " count-to="{ENfiscalyear}" duration="1" filter="number" value="ENfiscalyear">
+                                                                    {{projectbalance}}
+                                                                </span>
+                                                                <a class="dropdown-toggle btn btn-transparent" href="" uib-dropdown-toggle="">
+                                                                </a>
+                                                            </div>
+                                                            <uib-progressbar class="progress-xs no-radius background-dark no-margin" type="azure" value="89">
+                                                            </uib-progressbar>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="panel panel-light-grey no-radius">
+                                                    <div class="panel-body">
+                                                        <form id="expense_form" name="expense_form" ng-submit="addexpensetype(expense_form,expenseinfo)" novalidate="">
+                                                            <table class="table table-condensed">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th colspan="3">
+                                                                            หมวดค่าวัสดุ
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="cs-select cs-skin-elasticedit no-border no-padding" ng-change="selectedexpense(expenseinfo.idexpense_type,getBudgettype)" ng-model="expenseinfo.idexpense_type" ng-options="item.idexpense_type as item.expense_type for item in getBudgettype">
+                                                                                        <option disabled="" value="">
+                                                                                            {{expenseinfo.expense_type}}
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="focusguard" id="focusguard-1" tabindex="1">
+                                                            </div>
+                                                            <!--table class="table table-condensed">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th colspan="3">
+                                                                            งบประมาณจัดสรร
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+
+                                                                        <td>
+                                                                            <div class="row">
+                                                                                <div class="col-sm-10">
+                                                                                    <div class="form-group-sm ">
+                                                                                        <input
+                                                                                            class="form-control"
+                                                                                            id="texpense_type"
+                                                                                            name="texpense_type"
+                                                                                            ng-model="expenseinfo.expense_cost"
+                                                                                            mask="9?" restrict="reject"
+                                                                                            repeat="20"
+                                                                                            ng-required="currentStep == 1"
+                                                                                            placeholder="Budget"
+                                                                                            tabindex="2" type="text">
+                                                                                        </input>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table-->
+                                                            <div class="focusguard2" id="focusguard-2" tabindex="4">
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="row pull-right">
+                                                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                                                    <button class="btn btn-primary btn-md btn3d" type="submit">
+                                                                        <span class="glyphicon glyphicon-save">
+                                                                        </span>
+                                                                        Save
+                                                                    </button>
+                                                                    <!-- Indicates a successful or positive action -->
+                                                                    <button class="btn btn-danger btn-md btn3d" ng-click="focus()" type="button">
+                                                                        <span class="glyphicon glyphicon-ban-circle">
+                                                                        </span>
+                                                                        Reset
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: BREADCRUMB -->
+        <!-- start: YOUR CONTENT HERE -->
+        <!-- end: YOUR CONTENT HERE -->
+    </div>
+</div>
